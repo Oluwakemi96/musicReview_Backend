@@ -1,3 +1,5 @@
+import 'dotenv/config';
+
 const {
     MUSIC_REVIEW_NODE_ENV,
     MUSIC_REVIEW_PORT,

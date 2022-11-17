@@ -1,9 +1,9 @@
-import { devEnv, prodEnv, testEnv } from '../config/env';
+import { devEnv, prodEnv, testEnv } from './env/index.js';
 
 const { MUSIC_REVIEW_NODE_ENV } = process.env
 
-export default {
-    development: devEnv,
-    production: prodEnv,
-    test: testEnv,
-}[MUSIC_REVIEW_NODE_ENV || 'development'];
+const config = MUSIC_REVIEW_NODE_ENV === 'development' ? devEnv : 
+    MUSIC_REVIEW_NODE_ENV === 'production' ? prodEnv : 
+    testEnv;
+
+export default config;

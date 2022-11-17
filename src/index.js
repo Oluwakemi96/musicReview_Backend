@@ -2,10 +2,11 @@ import express from 'express';
 import helmet from 'helmet';
 import cors from 'cors';
 import { json, urlencoded } from 'express';
+import config from './config/index.js';
 import fileUpload from 'express-fileupload';
 import 'dotenv/config';
 
-const port = process.env.MUSIC_REVIEW_PORT || 4000;
+const port = config.MUSIC_REVIEW_PORT || 4000;
 
 const app = express();
 
@@ -39,6 +40,6 @@ app.use((req, res) => res.status(500).json({
 
 app.listen(port);
 
-console.log(`Server is running on ${port}`);
+console.log(`Server is running on port ${port}`);
 
 export default app;
