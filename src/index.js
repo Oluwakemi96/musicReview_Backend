@@ -5,10 +5,38 @@ import { json, urlencoded } from 'express';
 import config from './config/index.js';
 import fileUpload from 'express-fileupload';
 import 'dotenv/config';
+import loggerInit from './config/logger/index.js';
 
 const port = config.MUSIC_REVIEW_PORT || 4000;
 
 const app = express();
+console.log(config)
+let logger;
+
+switch (app.get('env')) {
+case 'development':
+  logger = loggerInit('development');
+  break;
+
+case 'production':
+  logger = loggerInit('production');
+  break;
+
+case 'staging':
+  logger = loggerInit('staging');
+  break;
+
+case 'test':
+  logger = loggerInit('test');
+  break;
+
+default:
+  logger = loggerInit();
+}
+
+global.logger = logger;
+logger.info(`Application starting...`);
+
 
 app.use(urlencoded({ extended: true }));
 app.use(json());
@@ -40,6 +68,6 @@ app.use((req, res) => res.status(500).json({
 
 app.listen(port);
 
-console.log(`Server is running on port ${port}`);
+logger.info(`Server is running on port ${port}`);
 
 export default app;
