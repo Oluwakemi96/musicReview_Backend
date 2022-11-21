@@ -3,11 +3,16 @@
   "version": "1.0.0",
   "description": "song reviews and rating",
   "main": "index.js",
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
-    "start": "node src/index.js",
-    "dev": "nodemon src/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint --fix src/ --ext .js",
+    "start": "node index.js",
+    "dev": "nodemon -r esm src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "migrate:up": "db-migrate up --config database.json",
+    "migrate:down": "db-migrate down --config database.json",
+    "migrate:reset": "db-migrate reset --config database.json",
+    "migrate:create": "db-migrate create --config database.json"
   },
   "repository": {
     "type": "git",
@@ -29,7 +34,9 @@
     "bluebird": "^3.7.2",
     "cors": "^2.8.5",
     "db-migrate": "^0.11.13",
+    "db-migrate-pg": "^1.2.2",
     "dotenv": "^16.0.3",
+    "esm": "^3.2.25",
     "express": "^4.18.2",
     "express-fileupload": "^1.4.0",
     "helmet": "^6.0.0",
@@ -37,6 +44,9 @@
     "winston": "^3.8.2"
   },
   "devDependencies": {
+    "eslint": "^8.27.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0",
     "nodemon": "^2.0.20"
   }
 }

@@ -38,11 +38,11 @@ const defaultLogger = {
 
 const getLogger = (env) => {
   switch (env) {
-  case 'production': return live('error', 100);
+    case 'production': return live('error', 100);
 
-  case 'development': return live('debug', 6);
+    case 'development': return live('debug', 6);
 
-  default: return new winston.createLogger(defaultLogger);
+    default: return new winston.createLogger(defaultLogger);
   }
 };
 

@@ -1,0 +1,14 @@
+{
+    "defaultEnv": "development",
+    "development": {
+      "ENV": "MUSIC_REVIEW_DEV_DATABASE_URL"
+    },
+    "test": {
+      "ENV": "MUSIC_REVIEW_TEST_DATABASE_URL"
+    },
+    "production": {
+      "ENV": "MUSIC_REVIEW_PROD_DATABASE_URL"
+    },
+    "sql-file" : true
+}
+
