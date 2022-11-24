@@ -11,6 +11,10 @@
         "sourceType": "module"
     },
     "rules": {
-       "import/extensions": "off"
+       "import/extensions": "off",
+       "camelcase": "off",
+       "import/prefer-default-export": "off",
+       "prefer-const": "off",
+       "max-len": "off"
     }
 }
