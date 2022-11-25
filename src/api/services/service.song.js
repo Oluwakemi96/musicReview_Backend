@@ -10,3 +10,8 @@ export const searchSongByTitle = async (song_title) => {
   const songs = await db.oneOrNone(songQueries.getSongByTitle, [`%${song_title}%`]);
   return songs;
 };
+
+export const searchSongByGenre = async (genre) => {
+  const songs = await db.oneOrNone(songQueries.getSongByGenre, [`%${genre}%`]);
+  return songs;
+};

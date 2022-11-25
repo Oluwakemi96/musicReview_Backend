@@ -18,8 +18,8 @@ const registerUser = async (req, res) => {
       return Response.error(res, 'username already exist', 400);
     }
     password = hash.passwordHash(`${password}`);
-    mails.sendSignUp(email_address);
     const user = await authServices.registerUser(full_name, username, password, email_address);
+    mails.sendSignUp(email_address);
     delete user[0].password;
     return Response.success(res, 'user registered successfully', 200, user);
   } catch (error) {

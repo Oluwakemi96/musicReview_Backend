@@ -19,4 +19,12 @@ export default {
         WHERE 
             song_title ILIKE $1
   `,
+  getSongByGenre: `
+    SELECT 
+        genre
+    FROM 
+        songs
+    WHERE 
+        genre ILIKE $1
+  `,
 };

@@ -29,7 +29,21 @@ const songByTitle = async (req, res) => {
   }
 };
 
+const SongByGenre = async (req, res) => {
+  const { genre } = req.query;
+  try {
+    const songs = await songServices.searchSongByGenre(genre);
+    if (!songs) {
+      return Response.error(res, 'there is no song with the genre', 422);
+    }
+    return Response.success(res, 'songs fetched successfully', 200, songs);
+  } catch (error) {
+    return error;
+  }
+};
+
 export default {
   allSongs,
   songByTitle,
+  SongByGenre,
 };
