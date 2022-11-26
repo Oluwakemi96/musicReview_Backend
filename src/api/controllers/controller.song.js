@@ -1,4 +1,4 @@
-import logger from '../../config/logger';
+// import logger from '../../config/logger';
 import * as songServices from '../services/service.song';
 import Response from '../../lib/http/lib.http.response';
 
@@ -17,7 +17,7 @@ const songByTitle = async (req, res) => {
   const { song_title } = req.query;
   try {
     const songs = await songServices.searchSongByTitle(song_title);
-    logger.info('search query return, songController/songByTitle');
+    // logger.info('search query return, songController/songByTitle');
     return res.status(200).json({
       status: 'success',
       message: 'song fetched successfully',
@@ -42,8 +42,19 @@ const SongByGenre = async (req, res) => {
   }
 };
 
+const songDetails = async (req, res) => {
+  let { id } = req.query;
+  try {
+    const details = await songServices.getAllDetails(id);
+    return Response.success(res, 'song details fetched successfully', 200, details);
+  } catch (error) {
+    return error;
+  }
+};
+
 export default {
   allSongs,
   songByTitle,
   SongByGenre,
+  songDetails,
 };

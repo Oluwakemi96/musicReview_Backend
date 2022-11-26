@@ -25,14 +25,16 @@ export default {
             FROM 
                 users
             WHERE
-                email_address = $1
+                email_address = $1 
   `,
-  getSongDetails: `
-            SELECT
-                *
-              FROM 
-                songs
-            WHERE song_title ILIKE $1
+  getUserById: `
+            SELECT 
+               *
+            FROM 
+              users
+            WHERE
+              id = $1
+
   `,
   updatePassword: `
             UPDATE 

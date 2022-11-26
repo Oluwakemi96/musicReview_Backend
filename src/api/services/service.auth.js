@@ -12,14 +12,14 @@ export const userEmail = async (email_address) => {
   return email;
 };
 
-export const loginUser = async (email_address) => {
+export const getUserByEmail = async (email_address) => {
   const user = await db.oneOrNone(authQueries.getUserByEmail, [email_address]);
   return user;
 };
 
-export const getAllDetails = async (song_title) => {
-  const details = await db.any(authQueries.getSongDetails, [`%${song_title}%`]);
-  return details;
+export const getUserById = async (id) => {
+  const user = await db.oneOrNone(authQueries.getUserById, [id]);
+  return user;
 };
 
 export const resetPassword = async (password, email_address) => {

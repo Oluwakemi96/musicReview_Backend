@@ -4,20 +4,16 @@ const signUp = Joi.object().keys({
   full_name: Joi.string().required(),
   username: Joi.string().required(),
   password: Joi.string().required(),
-  email_address: Joi.string().required(),
+  email_address: Joi.string().email().required(),
 });
 
 const login = Joi.object().keys({
-  email_address: Joi.string().required(),
+  email_address: Joi.string().email().required(),
   password: Joi.string().required(),
 });
 
-const songDetails = Joi.object().keys({
-  song_title: Joi.string().required(),
-});
-
 const forgotPassword = Joi.object().keys({
-  email_address: Joi.string().required(),
+  email_address: Joi.string().email().required(),
 });
 
 const resetPassword = Joi.object().keys({
@@ -28,7 +24,6 @@ const resetPassword = Joi.object().keys({
 export default {
   signUp,
   login,
-  songDetails,
   forgotPassword,
   resetPassword,
 };

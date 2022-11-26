@@ -16,10 +16,6 @@ const validateData = (schema, type) => async (req, res, next) => {
     if (valid.error) {
       const { message } = valid.error.details[0];
       return Response.error(res, message.replace(/["]/gi, ''), 422);
-      // return res.status(422).json({
-      //   status: 'failed',
-      //   message: `${message.replace(/["]/gi, '')}`,
-      // });
     }
   } catch (error) {
     return error;

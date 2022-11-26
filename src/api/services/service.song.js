@@ -12,6 +12,16 @@ export const searchSongByTitle = async (song_title) => {
 };
 
 export const searchSongByGenre = async (genre) => {
-  const songs = await db.oneOrNone(songQueries.getSongByGenre, [`%${genre}%`]);
+  const songs = await db.oneOrNone(songQueries.getSongByGenre, [genre]);
   return songs;
+};
+
+export const getAllDetails = async (id) => {
+  const details = await db.any(songQueries.getSongDetails, [id]);
+  return details;
+};
+
+export const getAllSongIds = async (id) => {
+  const ids = await db.oneOrNone(songQueries.getSongIds, [id]);
+  return ids;
 };

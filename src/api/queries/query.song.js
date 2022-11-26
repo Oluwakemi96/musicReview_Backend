@@ -25,6 +25,22 @@ export default {
     FROM 
         songs
     WHERE 
-        genre ILIKE $1
+        genre = $1
+    ORDER BY created_at DESC
+  `,
+  getSongDetails: `
+            SELECT
+                *
+              FROM 
+                songs
+            WHERE id = $1
+  `,
+  getSongIds: `
+    SELECT 
+        id 
+    FROM 
+        songs
+    WHERE 
+        id = $1
   `,
 };
