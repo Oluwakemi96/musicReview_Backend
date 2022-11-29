@@ -16,5 +16,13 @@ songRoute.get(
   songMiddleware.checkIfIdExists,
   songs.songDetails,
 );
+songRoute.post(
+  '/like',
+  authMiddleware.verifyToken,
+  songMiddleware.getSongToLike,
+  Model(Schema.songDetails, 'query'),
+  songMiddleware.checkIfUserAlreadyLikedAsong,
+  songs.likeAsong,
+);
 
 export default songRoute;

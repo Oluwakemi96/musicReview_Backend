@@ -43,4 +43,27 @@ export default {
     WHERE 
         id = $1
   `,
+  likeSongs: `
+    INSERT 
+      INTO 
+        song_likes (user_id, song_id)
+    VALUES ($1, $2)
+    RETURNING *
+  `,
+  getUserIds: `
+    SELECT 
+        user_id 
+    FROM 
+        song_likes
+    WHERE 
+        user_id = $1
+  `,
+  getSongLikeIds: `
+    SELECT 
+        song_id
+    FROM 
+        song_likes
+    WHERE
+        song_id = $1
+  `,
 };

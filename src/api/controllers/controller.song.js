@@ -52,9 +52,23 @@ const songDetails = async (req, res) => {
   }
 };
 
+const likeAsong = async (req, res) => {
+  let { id } = req.user;
+  let user_id = id;
+  let { song_id } = req;
+  try {
+    const likes = await songServices.likeSongs(user_id, song_id);
+    return Response.success(res, 'song liked successfully', 200, likes);
+  } catch (error) {
+    console.log(error);
+    return error;
+  }
+};
+
 export default {
   allSongs,
   songByTitle,
   SongByGenre,
   songDetails,
+  likeAsong,
 };

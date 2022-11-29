@@ -17,11 +17,26 @@ export const searchSongByGenre = async (genre) => {
 };
 
 export const getAllDetails = async (id) => {
-  const details = await db.any(songQueries.getSongDetails, [id]);
+  const details = await db.oneOrNone(songQueries.getSongDetails, [id]);
   return details;
 };
 
 export const getAllSongIds = async (id) => {
   const ids = await db.oneOrNone(songQueries.getSongIds, [id]);
   return ids;
+};
+
+export const likeSongs = async (user_id, song_id) => {
+  const like = await db.oneOrNone(songQueries.likeSongs, [user_id, song_id]);
+  return like;
+};
+
+export const getSongUserId = async (user_id) => {
+  const userIds = await db.oneOrNone(songQueries.getUserIds, [user_id]);
+  return userIds;
+};
+
+export const getSongLikeId = async (song_id) => {
+  const songIds = await db.oneOrNone(songQueries.getSongLikeIds, [song_id]);
+  return songIds;
 };
