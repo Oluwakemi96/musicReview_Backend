@@ -1,3 +1,4 @@
+/* eslint-disable consistent-return */
 // import logger from '../../config/logger';
 import * as songServices from '../services/service.song';
 import Response from '../../lib/http/lib.http.response';
@@ -65,10 +66,23 @@ const likeAsong = async (req, res) => {
   }
 };
 
+const dislikeAsong = async (req, res) => {
+  let { id } = req.user;
+  let user_id = id;
+  let { song_id } = req;
+  try {
+    const dislikes = await songServices.dislikeSongs(user_id, song_id);
+    return Response.success(res, 'song disliked successfully', 200, dislikes);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 export default {
   allSongs,
   songByTitle,
   SongByGenre,
   songDetails,
   likeAsong,
+  dislikeAsong,
 };

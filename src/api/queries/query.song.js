@@ -56,14 +56,43 @@ export default {
     FROM 
         song_likes
     WHERE 
-        user_id = $1
+        user_id = $1 
+    AND
+      song_id = $2
   `,
-  getSongLikeIds: `
+
+  dislikeSongs: `
+    INSERT 
+       INTO 
+        song_dislikes(user_id, song_id)
+    VALUES ($1, $2)
+    RETURNING *
+          
+  `,
+  getUserDislikeId: `
     SELECT 
-        song_id
+       user_id
     FROM 
-        song_likes
+       song_dislikes
+    WHERE 
+        user_id = $1 
+     AND 
+       song_id = $2
+  `,
+
+  deleteAsongLike: `
+    DELETE 
+        FROM 
+          song_likes
     WHERE
-        song_id = $1
+        user_id = $1 
+            
+  `,
+  deleteAsongDislike: `
+    DELETE
+        FROM
+         song_dislikes
+    WHERE
+        user_id = $1
   `,
 };

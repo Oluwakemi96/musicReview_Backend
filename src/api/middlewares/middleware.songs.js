@@ -14,7 +14,7 @@ const checkIfIdExists = async (req, res, next) => {
   }
 };
 
-const getSongToLike = async (req, res, next) => {
+const getSongToLikeOrDislike = async (req, res, next) => {
   try {
     let { id } = req.query;
     let song = await songServices.getAllDetails(id);
@@ -31,19 +31,70 @@ const checkIfUserAlreadyLikedAsong = async (req, res, next) => {
     let { id } = req.user;
     let user_id = id;
     let { song_id } = req;
-    let existingUserId = await songServices.getSongUserId(user_id);
-    let existingSongId = await songServices.getSongLikeId(song_id);
-    if (existingUserId && existingSongId) {
+    let existingUserId = await songServices.getSongUserId(user_id, song_id);
+    if (existingUserId) {
       return Response.error(res, 'you already liked this particular song', 401);
     }
     return next();
   } catch (error) {
+    console.log(error);
+    return error;
+  }
+};
+
+const checkIfUserAlreadyDislikedAsong = async (req, res, next) => {
+  try {
+    let { id } = req.user;
+    let user_id = id;
+    let { song_id } = req;
+    let existingUserId = await songServices.geUserDislikeId(user_id, song_id);
+    if (existingUserId) {
+      return Response.error(res, 'you already disliked this particular song', 401);
+    }
+    return next();
+  } catch (error) {
+    console.log(error);
+    return error;
+  }
+};
+
+const removeALike = async (req, res, next) => {
+  try {
+    let { id } = req.user;
+    let user_id = id;
+    let { song_id } = req;
+    let existingUserId = await songServices.getSongUserId(user_id, song_id);
+    if (existingUserId) {
+      await songServices.deleteAsongLike(user_id, song_id);
+    }
+    return next();
+  } catch (error) {
+    console.log(error);
+    return error;
+  }
+};
+
+const removeAdislike = async (req, res, next) => {
+  try {
+    let { id } = req.user;
+    let user_id = id;
+    let { song_id } = req;
+    let existingUserId = await songServices.geUserDislikeId(user_id, song_id);
+    if (existingUserId) {
+      await songServices.deleteAsongDislike(user_id);
+    }
+    return next();
+  } catch (error) {
+    console.log(error);
     return error;
   }
 };
 
 export default {
   checkIfIdExists,
-  getSongToLike,
+  getSongToLikeOrDislike,
   checkIfUserAlreadyLikedAsong,
+  checkIfUserAlreadyDislikedAsong,
+  removeALike,
+  removeAdislike,
 };
