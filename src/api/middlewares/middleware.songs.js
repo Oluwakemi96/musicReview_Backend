@@ -14,12 +14,11 @@ const checkIfIdExists = async (req, res, next) => {
   }
 };
 
-const getSongToLikeOrDislike = async (req, res, next) => {
+const getSongId = async (req, res, next) => {
   try {
     let { id } = req.query;
     let song = await songServices.getAllDetails(id);
-    let song_id = song.id;
-    req.song_id = song_id;
+    req.song = song;
     return next();
   } catch (error) {
     return error;
@@ -30,30 +29,27 @@ const checkIfUserAlreadyLikedAsong = async (req, res, next) => {
   try {
     let { id } = req.user;
     let user_id = id;
-    let { song_id } = req;
+    let song_id = req.song.id;
     let existingUserId = await songServices.getSongUserId(user_id, song_id);
     if (existingUserId) {
       return Response.error(res, 'you already liked this particular song', 401);
     }
     return next();
   } catch (error) {
-    console.log(error);
     return error;
   }
 };
 
 const checkIfUserAlreadyDislikedAsong = async (req, res, next) => {
   try {
-    let { id } = req.user;
-    let user_id = id;
-    let { song_id } = req;
+    let user_id = req.user.id;
+    let song_id = req.song.id;
     let existingUserId = await songServices.geUserDislikeId(user_id, song_id);
     if (existingUserId) {
       return Response.error(res, 'you already disliked this particular song', 401);
     }
     return next();
   } catch (error) {
-    console.log(error);
     return error;
   }
 };
@@ -62,14 +58,13 @@ const removeALike = async (req, res, next) => {
   try {
     let { id } = req.user;
     let user_id = id;
-    let { song_id } = req;
+    let song_id = req.song.id;
     let existingUserId = await songServices.getSongUserId(user_id, song_id);
     if (existingUserId) {
-      await songServices.deleteAsongLike(user_id, song_id);
+      await songServices.deleteAsongLike(user_id);
     }
     return next();
   } catch (error) {
-    console.log(error);
     return error;
   }
 };
@@ -78,23 +73,54 @@ const removeAdislike = async (req, res, next) => {
   try {
     let { id } = req.user;
     let user_id = id;
-    let { song_id } = req;
+    let song_id = req.song.id;
     let existingUserId = await songServices.geUserDislikeId(user_id, song_id);
     if (existingUserId) {
       await songServices.deleteAsongDislike(user_id);
     }
     return next();
   } catch (error) {
-    console.log(error);
+    return error;
+  }
+};
+
+// const checkIfUserAlreadyRatedASong = async (req, res, next) => {
+//   try {
+//     let { user: { id } } = req;
+//     let user_id = id;
+//     let song_id = req.song.id;
+//     let existingRating = await songServices.getAratedSong(user_id, song_id);
+//     if (existingRating) {
+//       return Response.error(res, 'you already rated this song', 401);
+//     }
+//     return next();
+//   } catch (error) {
+//     return error;
+//   }
+// };
+
+const checkIfAratingExist = async (req, res, next) => {
+  try {
+    let { user: { id } } = req;
+    let song_id = req.song.id;
+    let user_id = id;
+    let existingRating = await songServices.getAratedSong(user_id, song_id);
+    if (!existingRating) {
+      return Response.error(res, 'you have not rated this song', 401);
+    }
+    return next();
+  } catch (error) {
     return error;
   }
 };
 
 export default {
   checkIfIdExists,
-  getSongToLikeOrDislike,
+  getSongId,
   checkIfUserAlreadyLikedAsong,
   checkIfUserAlreadyDislikedAsong,
   removeALike,
   removeAdislike,
+  // checkIfUserAlreadyRatedASong,
+  checkIfAratingExist,
 };

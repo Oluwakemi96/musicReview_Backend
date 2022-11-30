@@ -56,12 +56,11 @@ const songDetails = async (req, res) => {
 const likeAsong = async (req, res) => {
   let { id } = req.user;
   let user_id = id;
-  let { song_id } = req;
+  let song_id = req.song.id;
   try {
     const likes = await songServices.likeSongs(user_id, song_id);
     return Response.success(res, 'song liked successfully', 200, likes);
   } catch (error) {
-    console.log(error);
     return error;
   }
 };
@@ -69,14 +68,43 @@ const likeAsong = async (req, res) => {
 const dislikeAsong = async (req, res) => {
   let { id } = req.user;
   let user_id = id;
-  let { song_id } = req;
+  let song_id = req.song.id;
   try {
     const dislikes = await songServices.dislikeSongs(user_id, song_id);
     return Response.success(res, 'song disliked successfully', 200, dislikes);
   } catch (error) {
-    console.log(error);
+    return error;
   }
 };
+
+const rateAsong = async (req, res) => {
+  let { user: { id }, body: { rating } } = req;
+  let user_id = id;
+  let song_id = req.song.id;
+  try {
+    const checkRating = await songServices.getAratedSong(user_id, song_id);
+    if (!checkRating) {
+      const ratedSong = await songServices.rateAsong(user_id, song_id, rating);
+      return Response.success(res, 'song rated successfully', 200, ratedSong);
+    }
+    const updatedRating = await songServices.updateArating(rating, user_id, song_id);
+    return Response.success(res, 'rating updated successfully', 200, updatedRating);
+  } catch (error) {
+    return error;
+  }
+};
+
+// const updateArating = async (req, res) => {
+//   let { body: { rating }, user: { id } } = req;
+//   let user_id = id;
+//   let song_id = req.song.id;
+//   try {
+//     const updatedRating = await songServices.updateArating(rating, user_id, song_id);
+//     return Response.success(res, 'rating updated successfully', 200, updatedRating);
+//   } catch (error) {
+//     return error;
+//   }
+// };
 
 export default {
   allSongs,
@@ -85,4 +113,6 @@ export default {
   songDetails,
   likeAsong,
   dislikeAsong,
+  rateAsong,
+  // updateArating,
 };

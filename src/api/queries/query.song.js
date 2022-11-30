@@ -95,4 +95,32 @@ export default {
     WHERE
         user_id = $1
   `,
+  rateAsong: `
+    INSERT 
+       INTO
+         ratings(user_id, song_id, rating)
+    VALUES ($1, $2, $3)
+    RETURNING *
+  `,
+  getUserRating: `
+    SELECT
+      rating
+        FROM
+      ratings
+    WHERE
+      user_id = $1
+    AND
+      song_id = $2
+  `,
+  editAuserRating: `
+    UPDATE 
+        ratings
+    SET
+        rating = $1
+    WHERE 
+        user_id = $2
+    AND
+        song_id = $3
+    RETURNING *
+  `,
 };

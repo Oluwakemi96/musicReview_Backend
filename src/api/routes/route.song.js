@@ -27,8 +27,8 @@ songRoute.get(
 songRoute.post(
   '/like',
   authMiddleware.verifyToken,
-  songMiddleware.getSongToLikeOrDislike,
   Model(Schema.songDetails, 'query'),
+  songMiddleware.getSongId,
   songMiddleware.checkIfUserAlreadyLikedAsong,
   songMiddleware.removeAdislike,
   songs.likeAsong,
@@ -36,11 +36,29 @@ songRoute.post(
 songRoute.post(
   '/dislike',
   authMiddleware.verifyToken,
-  songMiddleware.getSongToLikeOrDislike,
-  songMiddleware.checkIfUserAlreadyDislikedAsong,
   Model(Schema.songDetails, 'query'),
+  songMiddleware.getSongId,
+  songMiddleware.checkIfUserAlreadyDislikedAsong,
   songMiddleware.removeALike,
   songs.dislikeAsong,
 );
+songRoute.post(
+  '/rate',
+  authMiddleware.verifyToken,
+  Model(Schema.songDetails, 'query'),
+  Model(Schema.songRating, 'payload'),
+  songMiddleware.getSongId,
+  // songMiddleware.checkIfUserAlreadyRatedASong,
+  songs.rateAsong,
+);
+// songRoute.post(
+//   '/update_rating',
+//   authMiddleware.verifyToken,
+//   songMiddleware.getSongId,
+//   Model(Schema.songRating, 'payload'),
+//   songMiddleware.checkIfAratingExist,
+//   songs.updateArating,
+
+// );
 
 export default songRoute;

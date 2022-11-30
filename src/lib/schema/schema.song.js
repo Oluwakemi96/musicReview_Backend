@@ -12,8 +12,13 @@ const songDetails = Joi.object().keys({
   id: Joi.string().required(),
 });
 
+const songRating = Joi.object().keys({
+  rating: Joi.string().required(),
+});
+
 export default {
   songsVal,
   songsGenre,
   songDetails,
+  songRating,
 };
