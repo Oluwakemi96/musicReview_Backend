@@ -84,21 +84,6 @@ const removeAdislike = async (req, res, next) => {
   }
 };
 
-// const checkIfUserAlreadyRatedASong = async (req, res, next) => {
-//   try {
-//     let { user: { id } } = req;
-//     let user_id = id;
-//     let song_id = req.song.id;
-//     let existingRating = await songServices.getAratedSong(user_id, song_id);
-//     if (existingRating) {
-//       return Response.error(res, 'you already rated this song', 401);
-//     }
-//     return next();
-//   } catch (error) {
-//     return error;
-//   }
-// };
-
 const checkIfAratingExist = async (req, res, next) => {
   try {
     let { user: { id } } = req;
@@ -114,6 +99,59 @@ const checkIfAratingExist = async (req, res, next) => {
   }
 };
 
+const getReviewId = async (req, res, next) => {
+  try {
+    let user_id = req.user.id;
+    let reviewedSong = await songServices.getAreview(user_id);
+    req.reviewedSong = reviewedSong;
+    return next();
+  } catch (error) {
+    return error;
+  }
+};
+
+const checkIfAuserAlreadyLikedAreview = async (req, res, next) => {
+  try {
+    let review_id = req.reviewedSong.id;
+    let user_id = req.user.id;
+
+    const existingReviewLike = await songServices.checkAreviewLike(review_id, user_id);
+    if (existingReviewLike) {
+      return Response.error(res, 'you already liked this review', 401);
+    }
+    return next();
+  } catch (error) {
+    console.log(error);
+    return error;
+  }
+};
+
+const checkIfLikesExists = async (req, res, next) => {
+  try {
+    const likes = await songServices.getLikes();
+    if (likes.length === 0) {
+      return Response.error(res, 'no one has disliked this song', 401);
+    }
+    return next();
+  } catch (error) {
+    console.log(error);
+    return error;
+  }
+};
+
+const checkIfDislikesExists = async (req, res, next) => {
+  try {
+    const dislikes = await songServices.getDislikes();
+    if (dislikes.length === 0) {
+      return Response.error(res, 'no one has disliked this song', 401);
+    }
+    return next();
+  } catch (error) {
+    console.log(error);
+    return error;
+  }
+};
+
 export default {
   checkIfIdExists,
   getSongId,
@@ -121,6 +159,9 @@ export default {
   checkIfUserAlreadyDislikedAsong,
   removeALike,
   removeAdislike,
-  // checkIfUserAlreadyRatedASong,
   checkIfAratingExist,
+  getReviewId,
+  checkIfAuserAlreadyLikedAreview,
+  checkIfLikesExists,
+  checkIfDislikesExists,
 };

@@ -51,14 +51,47 @@ songRoute.post(
   // songMiddleware.checkIfUserAlreadyRatedASong,
   songs.rateAsong,
 );
-// songRoute.post(
-//   '/update_rating',
-//   authMiddleware.verifyToken,
-//   songMiddleware.getSongId,
-//   Model(Schema.songRating, 'payload'),
-//   songMiddleware.checkIfAratingExist,
-//   songs.updateArating,
 
-// );
+songRoute.post(
+  '/review',
+  authMiddleware.verifyToken,
+  Model(Schema.songDetails, 'query'),
+  Model(Schema.songReview, 'payload'),
+  songMiddleware.getSongId,
+  songs.reviewSong,
+);
 
+songRoute.post(
+  '/like_review',
+  authMiddleware.verifyToken,
+  songMiddleware.getReviewId,
+  songMiddleware.checkIfAuserAlreadyLikedAreview,
+  songs.likeReview,
+);
+
+songRoute.get(
+  '/song_reviews',
+  authMiddleware.verifyToken,
+  Model(Schema.songDetails, 'query'),
+  songMiddleware.getSongId,
+  songs.getAsongReview,
+);
+
+songRoute.get(
+  '/users_likes',
+  authMiddleware.verifyToken,
+  Model(Schema.songDetails, 'query'),
+  songMiddleware.getSongId,
+  songMiddleware.checkIfLikesExists,
+  songs.getUsersThatLikeAsong,
+);
+
+songRoute.get(
+  '/users_dislikes',
+  authMiddleware.verifyToken,
+  Model(Schema.songDetails, 'query'),
+  songMiddleware.getSongId,
+  songMiddleware.checkIfDislikesExists,
+  songs.getUsersThatDislikeAsong,
+);
 export default songRoute;

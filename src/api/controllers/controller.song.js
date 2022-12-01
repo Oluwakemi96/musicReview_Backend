@@ -17,7 +17,7 @@ const allSongs = async (req, res) => {
 const songByTitle = async (req, res) => {
   const { song_title } = req.query;
   try {
-    const songs = await songServices.searchSongByTitle(song_title);
+    const songs = await songServices.searchSongByTitle(song_title.trim().toLowerCase());
     // logger.info('search query return, songController/songByTitle');
     return res.status(200).json({
       status: 'success',
@@ -33,7 +33,7 @@ const songByTitle = async (req, res) => {
 const SongByGenre = async (req, res) => {
   const { genre } = req.query;
   try {
-    const songs = await songServices.searchSongByGenre(genre);
+    const songs = await songServices.searchSongByGenre(genre.trim().toLowerCase());
     if (!songs) {
       return Response.error(res, 'there is no song with the genre', 422);
     }
@@ -94,17 +94,64 @@ const rateAsong = async (req, res) => {
   }
 };
 
-// const updateArating = async (req, res) => {
-//   let { body: { rating }, user: { id } } = req;
-//   let user_id = id;
-//   let song_id = req.song.id;
-//   try {
-//     const updatedRating = await songServices.updateArating(rating, user_id, song_id);
-//     return Response.success(res, 'rating updated successfully', 200, updatedRating);
-//   } catch (error) {
-//     return error;
-//   }
-// };
+const reviewSong = async (req, res) => {
+  let user_id = req.user.id;
+  let song_id = req.song.id;
+  let review = req.body;
+  try {
+    const reviewedSong = await songServices.reviewSong(review, user_id, song_id);
+    return Response.success(res, 'song reviewed successfully', 200, reviewedSong);
+  } catch (error) {
+    return error;
+  }
+};
+
+const likeReview = async (req, res) => {
+  let review_id = req.reviewedSong.id;
+  let user_id = req.user.id;
+  try {
+    const likedReview = await songServices.likeAreview(review_id, user_id);
+    return Response.success(res, 'review liked successfully', 200, likedReview);
+  } catch (error) {
+    console.log(error);
+    return error;
+  }
+};
+
+const getAsongReview = async (req, res) => {
+  let song_id = req.song.id;
+  try {
+    const review = await songServices.getAsongReviews(song_id);
+    return Response.success(res, 'songs fetched successfully', 200, review);
+  } catch (error) {
+    console.log(error);
+    return error;
+  }
+};
+
+const getUsersThatLikeAsong = async (req, res) => {
+  try {
+    let song_id = req.song.id;
+    const users = await songServices.getUsersThatLikeAsong(song_id);
+    let usersStr = users.map((user) => user.full_name);
+    return Response.success(res, 'users fetched successfully', 200, usersStr);
+  } catch (error) {
+    console.log(error);
+    return error;
+  }
+};
+
+const getUsersThatDislikeAsong = async (req, res) => {
+  try {
+    let song_id = req.song.id;
+    const users = await songServices.getUsersThatDislikeAsong(song_id);
+    let usersStr = users.map((user) => user.full_name);
+
+    return Response.success(res, 'users fetched successfully', 200, usersStr);
+  } catch (error) {
+    return error;
+  }
+};
 
 export default {
   allSongs,
@@ -114,5 +161,9 @@ export default {
   likeAsong,
   dislikeAsong,
   rateAsong,
-  // updateArating,
+  reviewSong,
+  likeReview,
+  getAsongReview,
+  getUsersThatLikeAsong,
+  getUsersThatDislikeAsong,
 };

@@ -1,7 +1,6 @@
 /* eslint-disable prefer-const */
 import * as authServices from '../services/service.auth';
 import Response from '../../lib/http/lib.http.response';
-// import hash from '../../lib/hash/hash.auth';
 import mails from '../../lib/utils/sendMails';
 
 const registerUser = async (req, res) => {
@@ -24,7 +23,7 @@ const login = async (req, res) => {
   let { email_address } = req.body;
   let { token } = req;
   try {
-    const user = await authServices.getUserByEmail(email_address);
+    const user = await authServices.getUserByEmail(email_address.trim().toLowerCase());
     return res.status(200).json({
       status: 'success',
       message: 'user logged in successfully',
@@ -55,7 +54,7 @@ const resetPassword = async (req, res) => {
   const { email_address } = req.user;
   const { hashedPassword } = req;
   try {
-    await authServices.resetPassword(hashedPassword, email_address);
+    await authServices.resetPassword(hashedPassword.trim().toLowerCase(), email_address).trim().toLowerCase();
     mails.passwordUpdated(email_address);
     return Response.success(res, 'password updated successfully', 200);
   } catch (error) {

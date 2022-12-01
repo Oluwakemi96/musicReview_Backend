@@ -123,4 +123,92 @@ export default {
         song_id = $3
     RETURNING *
   `,
+  reviewAsong: `
+    INSERT 
+        INTO 
+          reviews(review, user_id, song_id)
+    VALUES($1, $2, $3)
+    RETURNING *     
+  `,
+  likeAreview: `
+    INSERT 
+        INTO 
+            reviews_likes(review_id, user_id)
+    VALUES($1, $2)
+    RETURNING *
+  `,
+  getAreview: `
+    SELECT 
+        id, 
+        review
+    FROM 
+        reviews
+    WHERE 
+        user_id = $1
+  `,
+  getReviewLike: `
+    SELECT 
+        review_id,
+        user_id
+    FROM 
+        reviews_likes
+    WHERE 
+        review_id = $1
+    AND 
+        user_id = $2 
+  `,
+
+  getUsersReview: `
+    SELECT
+        review
+    FROM
+        reviews
+    WHERE 
+        song_id = $1
+  `,
+
+  getUsersThatLikesAsong: `
+    SELECT 
+        users.full_name
+    FROM 
+        users
+    JOIN 
+        song_likes
+    ON 
+        users.id = song_likes.user_id
+    WHERE 
+        song_likes.song_id = $1;
+  `,
+
+  getUsersThatDislikesAsong: `
+    SELECT 
+        users.full_name
+    FROM 
+        users
+    JOIN 
+        song_dislikes
+    ON 
+        users.id = song_dislikes.user_id
+    WHERE 
+        song_dislikes.song_id = $1;
+  `,
+
+  getLikes: `
+    SELECT 
+        id,
+        user_id,
+        song_id
+    FROM
+        song_likes
+  `,
+
+  getDislikes: `
+    SELECT
+        id,
+        user_id,
+        song_id
+    FROM 
+        song_dislikes
+  `,
+
 };
