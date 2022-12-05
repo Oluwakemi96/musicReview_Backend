@@ -9,7 +9,8 @@ const songsGenre = Joi.object().keys({
 });
 
 const songDetails = Joi.object().keys({
-  id: Joi.string().required(),
+  song_id: Joi.string().required(),
+  review_id: Joi.string().required(),
 });
 
 const songRating = Joi.object().keys({
@@ -20,10 +21,21 @@ const songReview = Joi.object().keys({
   review: Joi.string().required(),
 });
 
+const songLikesReview = Joi.object().keys({
+  song_id: Joi.number().required(),
+  review_id: Joi.number().required(),
+});
+
+const songIdReview = Joi.object().keys({
+  song_id: Joi.number().required(),
+});
+
 export default {
   songsVal,
   songsGenre,
   songDetails,
   songRating,
   songReview,
+  songIdReview,
+  songLikesReview,
 };

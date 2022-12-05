@@ -3837,3 +3837,1161 @@
 {"level":"info","message":"Server is running on port 6000"}
 {"level":"info","message":"Application starting..."}
 {"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"date":"Thu Dec 01 2022 11:14:46 GMT+0100 (West Africa Standard Time)","error":{},"exception":true,"level":"error","message":"uncaughtException: Cannot read properties of null (reading 'id')\nTypeError: Cannot read properties of null (reading 'id')\n    at reviewSong (/Users/rashidatsikiru/Documents/musicReview_Backend/src/api/controllers/controller.song.js:99:26)\n    at Layer.handle [as handle_request] (/Users/rashidatsikiru/Documents/musicReview_Backend/node_modules/express/lib/router/layer.js:95:5)\n    at next (/Users/rashidatsikiru/Documents/musicReview_Backend/node_modules/express/lib/router/route.js:144:13)\n    at getSongId (/Users/rashidatsikiru/Documents/musicReview_Backend/src/api/middlewares/middleware.songs.js:22:12)","os":{"loadavg":[1.7939453125,1.57080078125,1.58837890625],"uptime":335137},"process":{"argv":["/usr/local/bin/node","/Users/rashidatsikiru/Documents/musicReview_Backend/src/index.js"],"cwd":"/Users/rashidatsikiru/Documents/musicReview_Backend","execPath":"/usr/local/bin/node","gid":20,"memoryUsage":{"arrayBuffers":3510486,"external":4985018,"heapTotal":32325632,"heapUsed":27998368,"rss":35848192},"pid":27643,"uid":501,"version":"v18.12.1"},"stack":"TypeError: Cannot read properties of null (reading 'id')\n    at reviewSong (/Users/rashidatsikiru/Documents/musicReview_Backend/src/api/controllers/controller.song.js:99:26)\n    at Layer.handle [as handle_request] (/Users/rashidatsikiru/Documents/musicReview_Backend/node_modules/express/lib/router/layer.js:95:5)\n    at next (/Users/rashidatsikiru/Documents/musicReview_Backend/node_modules/express/lib/router/route.js:144:13)\n    at getSongId (/Users/rashidatsikiru/Documents/musicReview_Backend/src/api/middlewares/middleware.songs.js:22:12)","trace":[{"column":26,"file":"/Users/rashidatsikiru/Documents/musicReview_Backend/src/api/controllers/controller.song.js","function":"reviewSong","line":99,"method":null,"native":false},{"column":5,"file":"/Users/rashidatsikiru/Documents/musicReview_Backend/node_modules/express/lib/router/layer.js","function":"Layer.handle [as handle_request]","line":95,"method":"handle [as handle_request]","native":false},{"column":13,"file":"/Users/rashidatsikiru/Documents/musicReview_Backend/node_modules/express/lib/router/route.js","function":"next","line":144,"method":null,"native":false},{"column":12,"file":"/Users/rashidatsikiru/Documents/musicReview_Backend/src/api/middlewares/middleware.songs.js","function":"getSongId","line":22,"method":null,"native":false}]}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"date":"Thu Dec 01 2022 11:34:16 GMT+0100 (West Africa Standard Time)","error":{},"exception":true,"level":"error","message":"uncaughtException: Cannot read properties of null (reading 'id')\nTypeError: Cannot read properties of null (reading 'id')\n    at reviewSong (/Users/rashidatsikiru/Documents/musicReview_Backend/src/api/controllers/controller.song.js:99:26)\n    at Layer.handle [as handle_request] (/Users/rashidatsikiru/Documents/musicReview_Backend/node_modules/express/lib/router/layer.js:95:5)\n    at next (/Users/rashidatsikiru/Documents/musicReview_Backend/node_modules/express/lib/router/route.js:144:13)\n    at getSongId (/Users/rashidatsikiru/Documents/musicReview_Backend/src/api/middlewares/middleware.songs.js:22:12)","os":{"loadavg":[1.73291015625,2.044921875,1.94921875],"uptime":336307},"process":{"argv":["/usr/local/bin/node","/Users/rashidatsikiru/Documents/musicReview_Backend/src/index.js"],"cwd":"/Users/rashidatsikiru/Documents/musicReview_Backend","execPath":"/usr/local/bin/node","gid":20,"memoryUsage":{"arrayBuffers":3691835,"external":5168450,"heapTotal":68239360,"heapUsed":38905872,"rss":92209152},"pid":27919,"uid":501,"version":"v18.12.1"},"stack":"TypeError: Cannot read properties of null (reading 'id')\n    at reviewSong (/Users/rashidatsikiru/Documents/musicReview_Backend/src/api/controllers/controller.song.js:99:26)\n    at Layer.handle [as handle_request] (/Users/rashidatsikiru/Documents/musicReview_Backend/node_modules/express/lib/router/layer.js:95:5)\n    at next (/Users/rashidatsikiru/Documents/musicReview_Backend/node_modules/express/lib/router/route.js:144:13)\n    at getSongId (/Users/rashidatsikiru/Documents/musicReview_Backend/src/api/middlewares/middleware.songs.js:22:12)","trace":[{"column":26,"file":"/Users/rashidatsikiru/Documents/musicReview_Backend/src/api/controllers/controller.song.js","function":"reviewSong","line":99,"method":null,"native":false},{"column":5,"file":"/Users/rashidatsikiru/Documents/musicReview_Backend/node_modules/express/lib/router/layer.js","function":"Layer.handle [as handle_request]","line":95,"method":"handle [as handle_request]","native":false},{"column":13,"file":"/Users/rashidatsikiru/Documents/musicReview_Backend/node_modules/express/lib/router/route.js","function":"next","line":144,"method":null,"native":false},{"column":12,"file":"/Users/rashidatsikiru/Documents/musicReview_Backend/src/api/middlewares/middleware.songs.js","function":"getSongId","line":22,"method":null,"native":false}]}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"date":"Thu Dec 01 2022 11:35:48 GMT+0100 (West Africa Standard Time)","error":{},"exception":true,"level":"error","message":"uncaughtException: Cannot read properties of null (reading 'id')\nTypeError: Cannot read properties of null (reading 'id')\n    at reviewSong (/Users/rashidatsikiru/Documents/musicReview_Backend/src/api/controllers/controller.song.js:99:26)\n    at Layer.handle [as handle_request] (/Users/rashidatsikiru/Documents/musicReview_Backend/node_modules/express/lib/router/layer.js:95:5)\n    at next (/Users/rashidatsikiru/Documents/musicReview_Backend/node_modules/express/lib/router/route.js:144:13)\n    at getSongId (/Users/rashidatsikiru/Documents/musicReview_Backend/src/api/middlewares/middleware.songs.js:22:12)","os":{"loadavg":[2.26123046875,2.181640625,2.009765625],"uptime":336399},"process":{"argv":["/usr/local/bin/node","/Users/rashidatsikiru/Documents/musicReview_Backend/src/index.js"],"cwd":"/Users/rashidatsikiru/Documents/musicReview_Backend","execPath":"/usr/local/bin/node","gid":20,"memoryUsage":{"arrayBuffers":3691835,"external":5168450,"heapTotal":68239360,"heapUsed":39039768,"rss":113115136},"pid":28013,"uid":501,"version":"v18.12.1"},"stack":"TypeError: Cannot read properties of null (reading 'id')\n    at reviewSong (/Users/rashidatsikiru/Documents/musicReview_Backend/src/api/controllers/controller.song.js:99:26)\n    at Layer.handle [as handle_request] (/Users/rashidatsikiru/Documents/musicReview_Backend/node_modules/express/lib/router/layer.js:95:5)\n    at next (/Users/rashidatsikiru/Documents/musicReview_Backend/node_modules/express/lib/router/route.js:144:13)\n    at getSongId (/Users/rashidatsikiru/Documents/musicReview_Backend/src/api/middlewares/middleware.songs.js:22:12)","trace":[{"column":26,"file":"/Users/rashidatsikiru/Documents/musicReview_Backend/src/api/controllers/controller.song.js","function":"reviewSong","line":99,"method":null,"native":false},{"column":5,"file":"/Users/rashidatsikiru/Documents/musicReview_Backend/node_modules/express/lib/router/layer.js","function":"Layer.handle [as handle_request]","line":95,"method":"handle [as handle_request]","native":false},{"column":13,"file":"/Users/rashidatsikiru/Documents/musicReview_Backend/node_modules/express/lib/router/route.js","function":"next","line":144,"method":null,"native":false},{"column":12,"file":"/Users/rashidatsikiru/Documents/musicReview_Backend/src/api/middlewares/middleware.songs.js","function":"getSongId","line":22,"method":null,"native":false}]}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"date":"Thu Dec 01 2022 13:49:22 GMT+0100 (West Africa Standard Time)","error":{},"exception":true,"level":"error","message":"uncaughtException: Cannot read properties of undefined (reading 'id')\nTypeError: Cannot read properties of undefined (reading 'id')\n    at getAsongReview (/Users/rashidatsikiru/Documents/musicReview_Backend/src/api/controllers/controller.song.js:123:26)\n    at Layer.handle [as handle_request] (/Users/rashidatsikiru/Documents/musicReview_Backend/node_modules/express/lib/router/layer.js:95:5)\n    at next (/Users/rashidatsikiru/Documents/musicReview_Backend/node_modules/express/lib/router/route.js:144:13)\n    at /Users/rashidatsikiru/Documents/musicReview_Backend/src/api/middlewares/middleware.model.js:23:10","os":{"loadavg":[1.1552734375,1.49365234375,1.67041015625],"uptime":344413},"process":{"argv":["/usr/local/bin/node","/Users/rashidatsikiru/Documents/musicReview_Backend/src/index.js"],"cwd":"/Users/rashidatsikiru/Documents/musicReview_Backend","execPath":"/usr/local/bin/node","gid":20,"memoryUsage":{"arrayBuffers":3622589,"external":5097121,"heapTotal":30752768,"heapUsed":26571496,"rss":48676864},"pid":30582,"uid":501,"version":"v18.12.1"},"stack":"TypeError: Cannot read properties of undefined (reading 'id')\n    at getAsongReview (/Users/rashidatsikiru/Documents/musicReview_Backend/src/api/controllers/controller.song.js:123:26)\n    at Layer.handle [as handle_request] (/Users/rashidatsikiru/Documents/musicReview_Backend/node_modules/express/lib/router/layer.js:95:5)\n    at next (/Users/rashidatsikiru/Documents/musicReview_Backend/node_modules/express/lib/router/route.js:144:13)\n    at /Users/rashidatsikiru/Documents/musicReview_Backend/src/api/middlewares/middleware.model.js:23:10","trace":[{"column":26,"file":"/Users/rashidatsikiru/Documents/musicReview_Backend/src/api/controllers/controller.song.js","function":"getAsongReview","line":123,"method":null,"native":false},{"column":5,"file":"/Users/rashidatsikiru/Documents/musicReview_Backend/node_modules/express/lib/router/layer.js","function":"Layer.handle [as handle_request]","line":95,"method":"handle [as handle_request]","native":false},{"column":13,"file":"/Users/rashidatsikiru/Documents/musicReview_Backend/node_modules/express/lib/router/route.js","function":"next","line":144,"method":null,"native":false},{"column":10,"file":"/Users/rashidatsikiru/Documents/musicReview_Backend/src/api/middlewares/middleware.model.js","function":null,"line":23,"method":null,"native":false}]}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"date":"Fri Dec 02 2022 21:14:12 GMT+0100 (West Africa Standard Time)","error":{},"exception":true,"level":"error","message":"uncaughtException: Cannot convert undefined or null to object\nTypeError: Cannot convert undefined or null to object\n    at /Users/rashidatsikiru/Documents/musicReview_Backend/src/api/middlewares/middleware.admin.auth.js:20:9","os":{"loadavg":[1.5517578125,1.64599609375,1.67431640625],"uptime":457504},"process":{"argv":["/usr/local/bin/node","/Users/rashidatsikiru/Documents/musicReview_Backend/src/index.js"],"cwd":"/Users/rashidatsikiru/Documents/musicReview_Backend","execPath":"/usr/local/bin/node","gid":20,"memoryUsage":{"arrayBuffers":3224230,"external":4698762,"heapTotal":32325632,"heapUsed":28963760,"rss":45137920},"pid":62495,"uid":501,"version":"v18.12.1"},"stack":"TypeError: Cannot convert undefined or null to object\n    at /Users/rashidatsikiru/Documents/musicReview_Backend/src/api/middlewares/middleware.admin.auth.js:20:9","trace":[{"column":9,"file":"/Users/rashidatsikiru/Documents/musicReview_Backend/src/api/middlewares/middleware.admin.auth.js","function":null,"line":20,"method":null,"native":false}]}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"date":"Fri Dec 02 2022 21:15:12 GMT+0100 (West Africa Standard Time)","error":{},"exception":true,"level":"error","message":"uncaughtException: Cannot convert undefined or null to object\nTypeError: Cannot convert undefined or null to object\n    at /Users/rashidatsikiru/Documents/musicReview_Backend/src/api/middlewares/middleware.admin.auth.js:21:9","os":{"loadavg":[1.76806640625,1.71484375,1.69775390625],"uptime":457564},"process":{"argv":["/usr/local/bin/node","/Users/rashidatsikiru/Documents/musicReview_Backend/src/index.js"],"cwd":"/Users/rashidatsikiru/Documents/musicReview_Backend","execPath":"/usr/local/bin/node","gid":20,"memoryUsage":{"arrayBuffers":3222289,"external":4696821,"heapTotal":35733504,"heapUsed":29110896,"rss":69255168},"pid":62605,"uid":501,"version":"v18.12.1"},"stack":"TypeError: Cannot convert undefined or null to object\n    at /Users/rashidatsikiru/Documents/musicReview_Backend/src/api/middlewares/middleware.admin.auth.js:21:9","trace":[{"column":9,"file":"/Users/rashidatsikiru/Documents/musicReview_Backend/src/api/middlewares/middleware.admin.auth.js","function":null,"line":21,"method":null,"native":false}]}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"date":"Fri Dec 02 2022 21:15:50 GMT+0100 (West Africa Standard Time)","error":{},"exception":true,"level":"error","message":"uncaughtException: Cannot convert undefined or null to object\nTypeError: Cannot convert undefined or null to object\n    at /Users/rashidatsikiru/Documents/musicReview_Backend/src/api/middlewares/middleware.admin.auth.js:21:9","os":{"loadavg":[2.88427734375,1.9892578125,1.79638671875],"uptime":457602},"process":{"argv":["/usr/local/bin/node","/Users/rashidatsikiru/Documents/musicReview_Backend/src/index.js"],"cwd":"/Users/rashidatsikiru/Documents/musicReview_Backend","execPath":"/usr/local/bin/node","gid":20,"memoryUsage":{"arrayBuffers":3461387,"external":4938002,"heapTotal":68501504,"heapUsed":39625272,"rss":85950464},"pid":62651,"uid":501,"version":"v18.12.1"},"stack":"TypeError: Cannot convert undefined or null to object\n    at /Users/rashidatsikiru/Documents/musicReview_Backend/src/api/middlewares/middleware.admin.auth.js:21:9","trace":[{"column":9,"file":"/Users/rashidatsikiru/Documents/musicReview_Backend/src/api/middlewares/middleware.admin.auth.js","function":null,"line":21,"method":null,"native":false}]}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"date":"Fri Dec 02 2022 21:20:02 GMT+0100 (West Africa Standard Time)","error":{},"exception":true,"level":"error","message":"uncaughtException: Cannot convert undefined or null to object\nTypeError: Cannot convert undefined or null to object\n    at /Users/rashidatsikiru/Documents/musicReview_Backend/src/api/middlewares/middleware.admin.auth.js:21:9","os":{"loadavg":[1.580078125,1.97314453125,1.849609375],"uptime":457854},"process":{"argv":["/usr/local/bin/node","/Users/rashidatsikiru/Documents/musicReview_Backend/src/index.js"],"cwd":"/Users/rashidatsikiru/Documents/musicReview_Backend","execPath":"/usr/local/bin/node","gid":20,"memoryUsage":{"arrayBuffers":3427687,"external":4904302,"heapTotal":68239360,"heapUsed":39205032,"rss":57917440},"pid":62736,"uid":501,"version":"v18.12.1"},"stack":"TypeError: Cannot convert undefined or null to object\n    at /Users/rashidatsikiru/Documents/musicReview_Backend/src/api/middlewares/middleware.admin.auth.js:21:9","trace":[{"column":9,"file":"/Users/rashidatsikiru/Documents/musicReview_Backend/src/api/middlewares/middleware.admin.auth.js","function":null,"line":21,"method":null,"native":false}]}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}
+{"level":"info","message":"Application starting..."}
+{"level":"info","message":"Server is running on port 6000"}

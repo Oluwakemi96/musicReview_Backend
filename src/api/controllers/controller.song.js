@@ -44,7 +44,7 @@ const SongByGenre = async (req, res) => {
 };
 
 const songDetails = async (req, res) => {
-  let { id } = req.query;
+  let { id } = req.params;
   try {
     const details = await songServices.getAllDetails(id);
     return Response.success(res, 'song details fetched successfully', 200, details);
@@ -80,7 +80,7 @@ const dislikeAsong = async (req, res) => {
 const rateAsong = async (req, res) => {
   let { user: { id }, body: { rating } } = req;
   let user_id = id;
-  let song_id = req.song.id;
+  let { song_id } = req.params;
   try {
     const checkRating = await songServices.getAratedSong(user_id, song_id);
     if (!checkRating) {
@@ -90,13 +90,14 @@ const rateAsong = async (req, res) => {
     const updatedRating = await songServices.updateArating(rating, user_id, song_id);
     return Response.success(res, 'rating updated successfully', 200, updatedRating);
   } catch (error) {
+    console.log(error);
     return error;
   }
 };
 
 const reviewSong = async (req, res) => {
   let user_id = req.user.id;
-  let song_id = req.song.id;
+  let { song_id } = req.params;
   let review = req.body;
   try {
     const reviewedSong = await songServices.reviewSong(review, user_id, song_id);
@@ -107,10 +108,11 @@ const reviewSong = async (req, res) => {
 };
 
 const likeReview = async (req, res) => {
-  let review_id = req.reviewedSong.id;
+  let { review_id } = req.params;
   let user_id = req.user.id;
+  let { song_id } = req.params;
   try {
-    const likedReview = await songServices.likeAreview(review_id, user_id);
+    const likedReview = await songServices.likeAreview(review_id, user_id, song_id);
     return Response.success(res, 'review liked successfully', 200, likedReview);
   } catch (error) {
     console.log(error);
@@ -119,7 +121,7 @@ const likeReview = async (req, res) => {
 };
 
 const getAsongReview = async (req, res) => {
-  let song_id = req.song.id;
+  let { song_id } = req.params;
   try {
     const review = await songServices.getAsongReviews(song_id);
     return Response.success(res, 'songs fetched successfully', 200, review);
@@ -131,7 +133,7 @@ const getAsongReview = async (req, res) => {
 
 const getUsersThatLikeAsong = async (req, res) => {
   try {
-    let song_id = req.song.id;
+    let { song_id } = req.params;
     const users = await songServices.getUsersThatLikeAsong(song_id);
     let usersStr = users.map((user) => user.full_name);
     return Response.success(res, 'users fetched successfully', 200, usersStr);
@@ -143,12 +145,38 @@ const getUsersThatLikeAsong = async (req, res) => {
 
 const getUsersThatDislikeAsong = async (req, res) => {
   try {
-    let song_id = req.song.id;
+    let { song_id } = req.params;
     const users = await songServices.getUsersThatDislikeAsong(song_id);
+    console.log(users);
     let usersStr = users.map((user) => user.full_name);
 
     return Response.success(res, 'users fetched successfully', 200, usersStr);
   } catch (error) {
+    console.log(error);
+    return error;
+  }
+};
+
+const getUsersThatLikesAReview = async (req, res) => {
+  try {
+    let { song_id, review_id } = req.params;
+    const users = await songServices.getUsersThatLikeAReview(song_id, review_id);
+    let usersStr = users.map((user) => user.full_name);
+    return Response.success(res, 'users fetched successfully', 200, usersStr);
+  } catch (error) {
+    console.log(error);
+    return error;
+  }
+};
+
+const deleteAuserReview = async (req, res) => {
+  try {
+    let user_id = req.user.id;
+    let { song_id } = req.params;
+    await songServices.deleteAuserReview(user_id, song_id);
+    return Response.success(res, 'review deleted successfully', 200);
+  } catch (error) {
+    console.log(error);
     return error;
   }
 };
@@ -166,4 +194,6 @@ export default {
   getAsongReview,
   getUsersThatLikeAsong,
   getUsersThatDislikeAsong,
+  getUsersThatLikesAReview,
+  deleteAuserReview,
 };

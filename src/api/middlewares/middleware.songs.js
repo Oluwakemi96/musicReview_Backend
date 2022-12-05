@@ -16,7 +16,7 @@ const checkIfIdExists = async (req, res, next) => {
 
 const getSongId = async (req, res, next) => {
   try {
-    let { id } = req.query;
+    let { id } = req.params;
     let song = await songServices.getAllDetails(id);
     req.song = song;
     return next();
@@ -99,23 +99,12 @@ const checkIfAratingExist = async (req, res, next) => {
   }
 };
 
-const getReviewId = async (req, res, next) => {
-  try {
-    let user_id = req.user.id;
-    let reviewedSong = await songServices.getAreview(user_id);
-    req.reviewedSong = reviewedSong;
-    return next();
-  } catch (error) {
-    return error;
-  }
-};
-
 const checkIfAuserAlreadyLikedAreview = async (req, res, next) => {
   try {
-    let review_id = req.reviewedSong.id;
+    let { review_id, song_id } = req.params;
     let user_id = req.user.id;
 
-    const existingReviewLike = await songServices.checkAreviewLike(review_id, user_id);
+    const existingReviewLike = await songServices.checkAreviewLike(review_id, user_id, song_id);
     if (existingReviewLike) {
       return Response.error(res, 'you already liked this review', 401);
     }
@@ -126,24 +115,14 @@ const checkIfAuserAlreadyLikedAreview = async (req, res, next) => {
   }
 };
 
-const checkIfLikesExists = async (req, res, next) => {
+const checkIfAlikeForAreviewExist = async (req, res, next) => {
   try {
-    const likes = await songServices.getLikes();
-    if (likes.length === 0) {
-      return Response.error(res, 'no one has disliked this song', 401);
-    }
-    return next();
-  } catch (error) {
-    console.log(error);
-    return error;
-  }
-};
-
-const checkIfDislikesExists = async (req, res, next) => {
-  try {
-    const dislikes = await songServices.getDislikes();
-    if (dislikes.length === 0) {
-      return Response.error(res, 'no one has disliked this song', 401);
+    let user_id = req.user.id;
+    let { review_id, song_id } = req.params;
+    const likes = await songServices.checkAreviewLike(review_id, user_id, song_id);
+    if (likes) {
+      await songServices.deleteAreviewLike(user_id, review_id, song_id);
+      return next();
     }
     return next();
   } catch (error) {
@@ -160,8 +139,6 @@ export default {
   removeALike,
   removeAdislike,
   checkIfAratingExist,
-  getReviewId,
   checkIfAuserAlreadyLikedAreview,
-  checkIfLikesExists,
-  checkIfDislikesExists,
+  checkIfAlikeForAreviewExist,
 };

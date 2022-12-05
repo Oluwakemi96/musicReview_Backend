@@ -76,18 +76,18 @@ export const reviewSong = async (review, user_id, song_id) => {
   return reviewedSong;
 };
 
-export const getAreview = async (user_id) => {
-  const reviewedSong = await db.oneOrNone(songQueries.getAreview, [user_id]);
+export const getAreview = async (user_id, song_id) => {
+  const reviewedSong = await db.oneOrNone(songQueries.getAreview, [user_id, song_id]);
   return reviewedSong;
 };
 
-export const likeAreview = async (review_id, user_id) => {
-  const likedReview = await db.oneOrNone(songQueries.likeAreview, [review_id, user_id]);
+export const likeAreview = async (review_id, user_id, song_id) => {
+  const likedReview = await db.oneOrNone(songQueries.likeAreview, [review_id, user_id, song_id]);
   return likedReview;
 };
 
-export const checkAreviewLike = async (review_id, user_id) => {
-  const likedReview = await db.oneOrNone(songQueries.getReviewLike, [review_id, user_id]);
+export const checkAreviewLike = async (review_id, user_id, song_id) => {
+  const likedReview = await db.oneOrNone(songQueries.getReviewLike, [review_id, user_id, song_id]);
   return likedReview;
 };
 
@@ -114,4 +114,19 @@ export const getLikes = async () => {
 export const getDislikes = async () => {
   const dislikes = await db.any(songQueries.getDislikes);
   return dislikes;
+};
+
+export const getUsersThatLikeAReview = async (song_id, review_id) => {
+  const users = await db.any(songQueries.getUsersThatLikesAReview, [song_id, review_id]);
+  return users;
+};
+
+export const deleteAuserReview = async (user_id, song_id) => {
+  const deletedReview = await db.oneOrNone(songQueries.deleteAuserReview, [user_id, song_id]);
+  return deletedReview;
+};
+
+export const deleteAreviewLike = async (user_id, review_id, song_id) => {
+  const deletedLike = await db.oneOrNone(songQueries.deleteAreviewLike, [user_id, review_id, song_id]);
+  return deletedLike;
 };

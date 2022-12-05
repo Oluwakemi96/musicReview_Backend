@@ -56,8 +56,23 @@ const passwordUpdated = (to) => {
     }
   });
 };
+const updateAdmin = (to, url) => {
+  const mailOptions = {
+    from: 'mimicaskesnmore@gmail.com',
+    to,
+    subject: 'Create Password',
+    text: `An admin account has been created for you, kindly click on this link ${url} to create your password`,
+  };
+
+  transporter.sendMail(mailOptions, (err) => {
+    if (err) {
+      return err;
+    }
+  });
+};
 export default {
   sendSignUp,
   resetPassword,
   passwordUpdated,
+  updateAdmin,
 };

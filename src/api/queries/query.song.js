@@ -133,8 +133,8 @@ export default {
   likeAreview: `
     INSERT 
         INTO 
-            reviews_likes(review_id, user_id)
-    VALUES($1, $2)
+            reviews_likes(review_id, user_id, song_id)
+    VALUES($1, $2, $3)
     RETURNING *
   `,
   getAreview: `
@@ -145,17 +145,22 @@ export default {
         reviews
     WHERE 
         user_id = $1
+    AND 
+        song_id = $2
   `,
   getReviewLike: `
     SELECT 
         review_id,
-        user_id
+        user_id,
+        song_id
     FROM 
         reviews_likes
     WHERE 
         review_id = $1
     AND 
         user_id = $2 
+    AND 
+        song_id = $3
   `,
 
   getUsersReview: `
@@ -211,4 +216,49 @@ export default {
         song_dislikes
   `,
 
+  getUsersThatLikesAReview: `
+    SELECT 
+       users.full_name
+    FROM 
+       users
+    JOIN 
+       reviews_likes
+    ON 
+       users.id = reviews_likes.user_id
+    WHERE 
+       reviews_likes.song_id = $1
+    AND 
+       reviews_likes.review_id = $2
+  `,
+
+  deleteAuserReview: `
+    DELETE 
+        FROM 
+           reviews
+    WHERE
+        user_id =$1
+    AND 
+        song_id = $2
+  `,
+
+  deleteAreviewLike: `
+    DELETE
+        FROM 
+            reviews_likes
+    WHERE
+        user_id = $1
+    AND 
+        review_id = $2
+    AND 
+        song_id = $3
+  `,
+
+  setUsersStatus: `
+    UPDATE 
+        users
+    SET 
+        status = $1
+    WHERE
+        user_id = $2
+  `,
 };

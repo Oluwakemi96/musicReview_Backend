@@ -15,10 +15,10 @@ authRoute.post(
 );
 authRoute.post(
   '/login',
+  Model(Schema.login, 'payload'),
   authMiddleware.checkIfEmailExistsForLogin,
   authMiddleware.verifyPassword,
   authMiddleware.generateToken,
-  Model(Schema.login, 'payload'),
   authUsers.login,
 );
 authRoute.post(

@@ -24,6 +24,7 @@ const login = async (req, res) => {
   let { token } = req;
   try {
     const user = await authServices.getUserByEmail(email_address.trim().toLowerCase());
+    delete user.password;
     return res.status(200).json({
       status: 'success',
       message: 'user logged in successfully',
@@ -44,7 +45,7 @@ const forgotPassword = async (req, res) => {
   try {
     const resetLink = `http://music.com/reset_password?token=${token}`;
     mails.resetPassword(email_address, resetLink);
-    return Response.success(res, 'link to reset your password has been sent to your mail', 200, token);
+    return Response.success(res, 'link to reset your password has been sent to your mail', 200);
   } catch (error) {
     return error;
   }
