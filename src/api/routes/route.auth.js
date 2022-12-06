@@ -11,14 +11,24 @@ authRoute.post(
   authMiddleware.checkIfEmailExists,
   authMiddleware.checkIfUsernameExists,
   authMiddleware.hashPassword,
+  authMiddleware.generateRandomStringToken,
   authUsers.registerUser,
 );
 authRoute.post(
-  '/login',
+  '/user_status/:user_id',
+  Model(Schema.userId, 'params'),
+  Model(Schema.userStatus, 'payload'),
+  authMiddleware.compareUserVerificationToken,
+  authUsers.updateUserStatus,
+);
+authRoute.post(
+  '/login/:user_id',
+  Model(Schema.userId, 'params'),
   Model(Schema.login, 'payload'),
   authMiddleware.checkIfEmailExistsForLogin,
   authMiddleware.verifyPassword,
   authMiddleware.generateToken,
+  authMiddleware.checkUserStatus,
   authUsers.login,
 );
 authRoute.post(

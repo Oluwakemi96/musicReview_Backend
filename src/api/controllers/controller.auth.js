@@ -9,12 +9,26 @@ const registerUser = async (req, res) => {
       full_name, username, email_address,
     }, hashedPassword,
   } = req;
+  const { userToken } = req;
+  const verificationLink = `http://music_review.com?token=${userToken}`;
   try {
-    const user = await authServices.registerUser(full_name.trim().toLowerCase(), username.trim().toLowerCase(), hashedPassword, email_address.trim().toLowerCase());
-    mails.sendSignUp(email_address);
+    const user = await authServices.registerUser(full_name.trim().toLowerCase(), username.trim().toLowerCase(), hashedPassword, email_address.trim().toLowerCase(), userToken);
+    mails.sendSignUp(email_address, verificationLink);
     delete user[0].password;
     return Response.success(res, 'user registered successfully', 200, user);
   } catch (error) {
+    return error;
+  }
+};
+
+const updateUserStatus = async (req, res) => {
+  try {
+    const { status } = req.body;
+    const { user_id } = req.params;
+    const updatedStatus = await authServices.updateUserStatus(status, user_id);
+    return Response.success(res, 'user status updated successfully', 200, updatedStatus);
+  } catch (error) {
+    console.log(error);
     return error;
   }
 };
@@ -67,4 +81,5 @@ export default {
   login,
   forgotPassword,
   resetPassword,
+  updateUserStatus,
 };

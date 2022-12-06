@@ -138,6 +138,49 @@ const generateToken = async (req, res, next) => {
   }
 };
 
+const generateRandomStringToken = async (req, res, next) => {
+  try {
+    const userToken = await hash.generateRandomString(50);
+    req.userToken = userToken;
+    return next();
+  } catch (error) {
+    console.log(error);
+    return error;
+  }
+};
+
+const compareUserVerificationToken = async (req, res, next) => {
+  try {
+    const { token } = req.body;
+    const { user_id } = req.params;
+    const user = await authServices.getUserById(user_id);
+    console.log(user);
+    if (token !== user.password_token) {
+      return Response.error(res, 'email verification failed', 403);
+    }
+    return next();
+  } catch (error) {
+    console.log(error);
+    return error;
+  }
+};
+
+const checkUserStatus = async (req, res, next) => {
+  try {
+    const { user_id } = req.params;
+    const { email_address } = req.body;
+    console.log(email_address);
+    const user = await authServices.getUserById(user_id);
+    if (user.status === 'inactive' && user.email_address === email_address) {
+      return Response.error(res, 'kindly verify your email address to login', 403);
+    }
+    return next();
+  } catch (error) {
+    console.log(error);
+    return error;
+  }
+};
+
 export default {
   verifyToken,
   verifyResetToken,
@@ -147,4 +190,7 @@ export default {
   hashPassword,
   verifyPassword,
   generateToken,
+  generateRandomStringToken,
+  compareUserVerificationToken,
+  checkUserStatus,
 };

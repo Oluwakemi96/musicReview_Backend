@@ -21,9 +21,19 @@ const resetPassword = Joi.object().keys({
   token: Joi.string().required(),
 });
 
+const userStatus = Joi.object().keys({
+  status: Joi.string().required(),
+  token: Joi.string().required(),
+});
+
+const userId = Joi.object().keys({
+  user_id: Joi.number().required(),
+});
 export default {
   signUp,
   login,
   forgotPassword,
   resetPassword,
+  userStatus,
+  userId,
 };

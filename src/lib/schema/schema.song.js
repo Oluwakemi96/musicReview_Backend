@@ -29,6 +29,9 @@ const songLikesReview = Joi.object().keys({
 const songIdReview = Joi.object().keys({
   song_id: Joi.number().required(),
 });
+const songId = Joi.object().keys({
+  song_id: Joi.number().required(),
+});
 
 export default {
   songsVal,
@@ -38,4 +41,5 @@ export default {
   songReview,
   songIdReview,
   songLikesReview,
+  songId,
 };

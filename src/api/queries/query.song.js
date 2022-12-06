@@ -253,12 +253,4 @@ export default {
         song_id = $3
   `,
 
-  setUsersStatus: `
-    UPDATE 
-        users
-    SET 
-        status = $1
-    WHERE
-        user_id = $2
-  `,
 };

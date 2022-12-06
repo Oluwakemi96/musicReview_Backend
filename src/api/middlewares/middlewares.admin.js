@@ -46,8 +46,36 @@ const checkIfAdminIsRegular = async (req, res, next) => {
   }
 };
 
+const checkAdminStatus = async (req, res, next) => {
+  try {
+    let { id } = req.admin;
+    const admin = await adminServices.getAdmins(id);
+    if (admin.status === 'deactivated' || admin.status === 'suspended') { return Response.error(res, 'you do not have the permission to access this route, please contact support', 401); }
+    return next();
+  } catch (error) {
+    console.log(error);
+    return error;
+  }
+};
+
+const getsuperAdmin = async (req, res, next) => {
+  try {
+    let { id } = req.admin;
+    const admin = await adminServices.getAdmins(id);
+    if (admin.type !== 'super') {
+      return Response.error(res, 'you are not authorized to access this route, please contact support', 401);
+    }
+    return next();
+  } catch (error) {
+    console.log(error);
+    return error;
+  }
+};
+
 export default {
   checkPasswordToken,
   generateRandomStringToken,
   checkIfAdminIsRegular,
+  checkAdminStatus,
+  getsuperAdmin,
 };

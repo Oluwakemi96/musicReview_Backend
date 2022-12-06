@@ -1,9 +1,9 @@
 import db from '../../config/db/index';
 import authQueries from '../queries/query.auth';
 
-export const registerUser = async (full_name, username, password, email_address) => {
+export const registerUser = async (full_name, username, password, email_address, password_token) => {
   // eslint-disable-next-line max-len
-  const user = await db.any(authQueries.registerUser, [full_name, username, password, email_address]);
+  const user = await db.any(authQueries.registerUser, [full_name, username, password, email_address, password_token]);
   return user;
 };
 
@@ -30,4 +30,9 @@ export const resetPassword = async (password, email_address) => {
 export const usernameCheck = async (username) => {
   const getUsername = await db.oneOrNone(authQueries.findUsername, [username]);
   return getUsername;
+};
+
+export const updateUserStatus = async (status, user_id) => {
+  const updatedStatus = await db.oneOrNone(authQueries.updateStatus, [status, user_id]);
+  return updatedStatus;
 };

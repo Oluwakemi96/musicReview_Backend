@@ -6,9 +6,10 @@ export default {
         full_name,
         username,
         password,
-        email_address
+        email_address,
+        password_token
      )
-     VALUES($1, $2, $3, $4)
+     VALUES($1, $2, $3, $4, $5)
      RETURNING *
     `,
   findEmail: `
@@ -51,6 +52,17 @@ export default {
               FROM 
                 users
             WHERE username = $1
+  `,
+
+  updateStatus: `
+      UPDATE
+          users 
+      SET
+        updated_at = NOW(),
+        status = $1
+      WHERE
+          id = $2
+            
   `,
 
 };

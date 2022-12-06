@@ -14,12 +14,12 @@ let transporter = nodemailer.createTransport({
   },
 });
 
-const sendSignUp = (to) => {
+const sendSignUp = (to, url) => {
   const mailOptions = {
     from: 'mimicaskesnmore@gmail.com',
     to,
-    subject: 'Signed up successfully',
-    text: 'Welcome to Enyata Music app where you listen to seamless music! Search for your favorite song and enjoy',
+    subject: 'Verify Email Address',
+    text: `Welcome to Enyata Music app where you listen to seamless music! Search for your favorite song and enjoy.. click on this link ${url} to verify your email and complete your signup process`,
   };
   transporter.sendMail(mailOptions, (err) => {
     if (err) {

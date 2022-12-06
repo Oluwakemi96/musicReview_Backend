@@ -36,7 +36,47 @@ export const deleteSongs = async (id) => {
   return song;
 };
 
-export const editSongs = async (song_title, year_of_release, genre, album_name, artist, song_link, id) => {
-  const editedSong = await db.oneOrNone(adminQueries.editSong, [song_title, year_of_release, genre, album_name, artist, song_link, id]);
+export const editSongs = async (payload) => {
+  const editedSong = await db.oneOrNone(adminQueries.editSong, [...payload]);
   return editedSong;
+};
+
+export const getSong = async (id) => {
+  const song = await db.oneOrNone(adminQueries.getSong, [id]);
+  return song;
+};
+
+export const getAllSongs = async () => {
+  const songs = await db.any(adminQueries.getAllSongs);
+  return songs;
+};
+
+export const getSongsByGenre = async (genre) => {
+  const songs = await db.any(adminQueries.getSongsByGenre, [genre]);
+  return songs;
+};
+
+export const getSongReviews = async (song_id) => {
+  const reviews = await db.any(adminQueries.getUsersReviews, [song_id]);
+  return reviews;
+};
+
+export const deleteReviews = async (user_id) => {
+  const deletedReview = await db.oneOrNone(adminQueries.deleteReview, [user_id]);
+  return deletedReview;
+};
+
+export const getAllAdmins = async () => {
+  const admins = await db.any(adminQueries.getAllAdmins);
+  return admins;
+};
+
+export const updateAdminStatus = async (status, admin_id) => {
+  const updatedStatus = await db.oneOrNone(adminQueries.updateAdminStatus, [status, admin_id]);
+  return updatedStatus;
+};
+
+export const updateUsersStatus = async (status, user_id) => {
+  const updatedUser = await db.oneOrNone(adminQueries.setUsersStatus, [status, user_id]);
+  return updatedUser;
 };
