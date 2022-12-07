@@ -43,12 +43,17 @@ const SongByGenre = async (req, res) => {
   }
 };
 
-const songDetails = async (req, res) => {
-  let { song_id } = req.params;
+const getAllSongDetails = async (req, res) => {
   try {
-    const details = await songServices.getAllDetails(song_id);
-    return Response.success(res, 'song details fetched successfully', 200, details);
+    const { song_id } = req.params;
+    const allSongDetails = {};
+    const songDetails = await songServices.getSongDetails(song_id);
+    const reviewDetails = await songServices.getReviewDetails(song_id);
+    allSongDetails.details = songDetails;
+    allSongDetails.reviews = reviewDetails;
+    return Response.success(res, 'song details fetched successfully', 200, allSongDetails);
   } catch (error) {
+    console.log(error);
     return error;
   }
 };
@@ -184,7 +189,7 @@ export default {
   allSongs,
   songByTitle,
   SongByGenre,
-  songDetails,
+  getAllSongDetails,
   likeAsong,
   dislikeAsong,
   rateAsong,

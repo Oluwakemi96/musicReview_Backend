@@ -1,3 +1,4 @@
+/* eslint-disable no-tabs */
 export default {
   createAdmin: `
         INSERT 
@@ -158,4 +159,62 @@ export default {
     WHERE
         id = $2
   `,
+  getSongDetails: `
+    SELECT 
+        songs.id,
+        songs.song_title,
+        songs.year_of_release,
+        songs.genre,
+        songs.album_name,
+        songs.artist,
+        songs.song_link,
+    AVG((ratings.rating::VARCHAR)::INT) AS average_rating,
+    COUNT (song_likes.id) AS total_likes,
+    COUNT (song_dislikes.id) As total_dislikes
+    FROM 
+        songs 
+    LEFT JOIN 
+        ratings 
+    ON 
+        songs.id = ratings.song_id
+    LEFT JOIN
+        song_likes 
+    ON 
+        songs.id = song_likes.song_id
+    LEFT JOIN
+        song_dislikes
+    ON 
+        songs.id = song_dislikes.song_id
+    WHERE 
+        songs.id= $1
+    GROUP BY 1, 2, 3, 4, 5, 6  
+    `,
+  getReviewDetails: `
+    SELECT 
+        reviews.id,
+        reviews.review,
+        reviews.created_at,
+        users.full_name,
+    COUNT (reviews_likes.song_id) AS total_review_likes	
+    FROM 
+        reviews
+    LEFT JOIN
+        songs
+    ON 
+        songs.id = reviews.song_id
+    LEFT JOIN
+        users
+    ON
+        users.id = reviews.user_id
+    LEFT JOIN
+        reviews_likes
+    ON 
+        songs.id = reviews_likes.song_id
+            
+        WHERE
+            songs.id = $1
+            
+    GROUP BY 1, 2, 3, 4  
+    `,
+
 };

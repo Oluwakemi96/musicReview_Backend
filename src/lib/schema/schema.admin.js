@@ -70,3 +70,6 @@ export const userStatusId = Joi.object().keys({
 export const userStatus = Joi.object().keys({
   status: Joi.string().required(),
 });
+export const songDetailsId = Joi.object().keys({
+  song_id: Joi.number().required(),
+});

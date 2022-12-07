@@ -22,8 +22,7 @@ authRoute.post(
   authUsers.updateUserStatus,
 );
 authRoute.post(
-  '/login/:user_id',
-  Model(Schema.userId, 'params'),
+  '/login',
   Model(Schema.login, 'payload'),
   authMiddleware.checkIfEmailExistsForLogin,
   authMiddleware.verifyPassword,

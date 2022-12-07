@@ -23,7 +23,7 @@ songRoute.get(
   songMiddleware.checkUserCurrentStatus,
   Model(Schema.songId, 'params'),
   songMiddleware.checkIfIdExists,
-  songs.songDetails,
+  songs.getAllSongDetails,
 );
 songRoute.post(
   '/like/:song_id',

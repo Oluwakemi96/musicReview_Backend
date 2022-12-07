@@ -80,3 +80,13 @@ export const updateUsersStatus = async (status, user_id) => {
   const updatedUser = await db.oneOrNone(adminQueries.setUsersStatus, [status, user_id]);
   return updatedUser;
 };
+
+export const getSongDetails = async (song_id) => {
+  const songDetails = await db.oneOrNone(adminQueries.getSongDetails, [song_id]);
+  return songDetails;
+};
+
+export const getReviewDetails = async (song_id) => {
+  const reviewDetails = await db.any(adminQueries.getReviewDetails, [song_id]);
+  return reviewDetails;
+};

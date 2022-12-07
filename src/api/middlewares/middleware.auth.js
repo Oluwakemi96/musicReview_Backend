@@ -167,16 +167,13 @@ const compareUserVerificationToken = async (req, res, next) => {
 
 const checkUserStatus = async (req, res, next) => {
   try {
-    const { user_id } = req.params;
     const { email_address } = req.body;
-    console.log(email_address);
-    const user = await authServices.getUserById(user_id);
+    const user = await authServices.getUserByEmail(email_address);
     if (user.status === 'inactive' && user.email_address === email_address) {
       return Response.error(res, 'kindly verify your email address to login', 403);
     }
     return next();
   } catch (error) {
-    console.log(error);
     return error;
   }
 };

@@ -143,4 +143,12 @@ adminRoute.patch(
   admin.deactivateUser,
 );
 
+adminRoute.get(
+  '/song_details/:song_id',
+  authAdminMiddleware.verifyToken,
+  adminMiddleware.checkAdminStatus,
+  Model(Schema.songDetailsId, 'params'),
+  admin.getAllSongDetails,
+);
+
 export default adminRoute;
