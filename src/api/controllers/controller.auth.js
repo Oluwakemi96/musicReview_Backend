@@ -37,9 +37,8 @@ const registerUser = async (req, res) => {
  */
 const updateUserStatus = async (req, res) => {
   try {
-    const { status } = req.body;
-    const { user_id } = req.params;
-    const updatedStatus = await authServices.updateUserStatus(status, user_id);
+    const { id } = req.user;
+    const updatedStatus = await authServices.updateUserStatus(id);
     return Response.success(res, 'user status updated successfully', 200, updatedStatus);
   } catch (error) {
     console.log(error);

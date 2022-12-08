@@ -14,9 +14,8 @@ import hash from '../../lib/hash/hash.auth';
  */
 const checkPasswordToken = async (req, res, next) => {
   try {
-    let { id } = req.params;
     let { password_token } = req.body;
-    const existingToken = await adminServices.getPasswordToken(id);
+    const existingToken = await adminServices.getPasswordToken(password_token);
     // eslint-disable-next-line eqeqeq
     if (existingToken.password_token != password_token) {
       return Response.error(res, 'unauthorised access', 401);
@@ -102,7 +101,7 @@ const getsuperAdmin = async (req, res, next) => {
     let { id } = req.admin;
     const admin = await adminServices.getAdmins(id);
     if (admin.type !== 'super') {
-      return Response.error(res, 'Access denied, please contact support', 401);
+      return Response.error(res, 'Access denied, please contact support', 403);
     }
     return next();
   } catch (error) {

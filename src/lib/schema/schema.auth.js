@@ -22,7 +22,6 @@ const resetPassword = Joi.object().keys({
 });
 
 const userStatus = Joi.object().keys({
-  status: Joi.string().required(),
   token: Joi.string().required(),
 });
 

@@ -32,7 +32,12 @@ export const usernameCheck = async (username) => {
   return getUsername;
 };
 
-export const updateUserStatus = async (status, user_id) => {
-  const updatedStatus = await db.oneOrNone(authQueries.updateStatus, [status, user_id]);
+export const updateUserStatus = async (id) => {
+  const updatedStatus = await db.oneOrNone(authQueries.updateStatus, [id]);
   return updatedStatus;
+};
+
+export const getUserByToken = async (id) => {
+  const user = await db.oneOrNone(authQueries.getUserByToken, [id]);
+  return user;
 };

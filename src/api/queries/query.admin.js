@@ -12,9 +12,11 @@ export default {
         admins
     SET 
         updated_at = NOW(),
-        password = $1
+        password = $1,
+        password_token = null,
+        status = 'active'
     WHERE 
-        id = $2
+        password_token = $2
     RETURNING *
  `,
   getPasswordToken: `
@@ -23,7 +25,7 @@ export default {
     FROM 
         admins
     WHERE
-        id = $1
+        password_token = $1
  `,
   setAdminStatus: `
      UPDATE 
@@ -172,7 +174,8 @@ export default {
         songs.album_name,
         songs.artist,
         songs.song_link,
-    AVG((ratings.rating::VARCHAR)::INT) AS average_rating,
+        
+    ROUND(AVG((ratings.rating::VARCHAR)::INT)) AS average_rating,
     COUNT (song_likes.id) AS total_likes,
     COUNT (song_dislikes.id) As total_dislikes
     FROM 

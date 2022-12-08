@@ -15,8 +15,7 @@ authRoute.post(
   authUsers.registerUser,
 );
 authRoute.post(
-  '/user_status/:user_id',
-  Model(Schema.userId, 'params'),
+  '/user_verification',
   Model(Schema.userStatus, 'payload'),
   authMiddleware.compareUserVerificationToken,
   authUsers.updateUserStatus,

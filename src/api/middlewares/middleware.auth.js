@@ -227,9 +227,8 @@ const generateRandomStringToken = async (req, res, next) => {
 const compareUserVerificationToken = async (req, res, next) => {
   try {
     const { token } = req.body;
-    const { user_id } = req.params;
-    const user = await authServices.getUserById(user_id);
-    console.log(user);
+    const user = await authServices.getUserByToken(token);
+    req.user = user;
     if (token !== user.password_token) {
       return Response.error(res, 'email verification failed', 401);
     }
