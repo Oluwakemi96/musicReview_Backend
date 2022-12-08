@@ -37,8 +37,8 @@ const createAdmin = async (req, res) => {
 const updateAdminPassword = async (req, res) => {
   try {
     const { hashedPassword } = req;
-    const { id } = req.params;
-    const updatedAdmin = await adminServices.updateRegularAdmin(hashedPassword, id);
+    const { password_token } = req.body;
+    const updatedAdmin = await adminServices.updateRegularAdmin(hashedPassword, password_token);
     delete updatedAdmin.password;
     return Response.success(res, 'admin updated successfully', 200, updatedAdmin);
   } catch (error) {

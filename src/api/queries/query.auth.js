@@ -37,6 +37,14 @@ export default {
               id = $1
 
   `,
+  getUserByToken: `
+            SELECT
+              *
+          FROM 
+            users
+          WHERE
+            password_token = $1  
+  `,
   updatePassword: `
             UPDATE 
                users
@@ -59,9 +67,10 @@ export default {
           users 
       SET
         updated_at = NOW(),
-        status = $1
+        password_token = null
+        status = 'active'
       WHERE
-          id = $2
+          id = $1
             
   `,
 

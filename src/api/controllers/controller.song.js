@@ -74,12 +74,13 @@ const SongByGenre = async (req, res) => {
 const getAllSongDetails = async (req, res) => {
   try {
     const { song_id } = req.params;
-    const allSongDetails = {};
-    const songDetails = await songServices.getSongDetails(song_id);
+    const basicDetails = await songServices.getSongDetails(song_id);
     const reviewDetails = await songServices.getReviewDetails(song_id);
-    allSongDetails.details = songDetails;
-    allSongDetails.reviews = reviewDetails;
-    return Response.success(res, 'song details fetched successfully', 200, allSongDetails);
+    const songDetails = {
+      ...basicDetails,
+      reviews: reviewDetails,
+    };
+    return Response.success(res, 'song details fetched successfully', 200, songDetails);
   } catch (error) {
     console.log(error);
     return error;

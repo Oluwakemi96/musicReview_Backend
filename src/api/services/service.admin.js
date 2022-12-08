@@ -6,13 +6,13 @@ export const createRegularAdmin = async (first_name, last_name, email, password_
   return regularAdmin;
 };
 
-export const updateRegularAdmin = async (password, id) => {
-  const updatedAdmin = await db.oneOrNone(adminQueries.updateRegularAdmin, [password, id]);
+export const updateRegularAdmin = async (password, password_token) => {
+  const updatedAdmin = await db.oneOrNone(adminQueries.updateRegularAdmin, [password, password_token]);
   return updatedAdmin;
 };
 
-export const getPasswordToken = async (id) => {
-  const passwordToken = await db.oneOrNone(adminQueries.getPasswordToken, [id]);
+export const getPasswordToken = async (password_token) => {
+  const passwordToken = await db.oneOrNone(adminQueries.getPasswordToken, [password_token]);
   return passwordToken;
 };
 

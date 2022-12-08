@@ -21,8 +21,9 @@ const verifyToken = async (req, res, next) => {
     if (tokenExists) {
       const token = req.headers.authorization.split(' ')[1];
       jwt.verify(token, config.MUSIC_REVIEW_JWT_SECRET_KEY, tokenExpires.MUSIC_REVIEW_JWT_SIGN_OPTIONS, async (err, decodedToken) => {
-        if (err) {
-          return Response.error(res, 'unauthorized access', 401);
+        if (decodedToken.message === 'jwt expired') {
+          console.log(err);
+          return Response.error(res, 'token expired', 401);
         }
 
         if (!decodedToken.is_admin) {

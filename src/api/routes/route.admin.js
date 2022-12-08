@@ -18,9 +18,8 @@ adminRoute.post(
 );
 
 adminRoute.post(
-  '/create_admin_password/:id',
+  '/create_admin_password',
   Model(Schema.updateAdmin, 'payload'),
-  Model(Schema.updateAdminId, 'params'),
   adminMiddleware.checkPasswordToken,
   authMiddleware.hashPassword,
   admin.updateAdminPassword,
