@@ -6,6 +6,14 @@ import hash from '../../lib/hash/hash.auth';
 import * as adminAuthServices from '../services/service.admin.auth';
 import config from '../../config/index';
 
+/**
+ * verifies an admin token
+ * @param {Request} req -The request from the endpoint
+ * @param {Response} res -The response returned by the method/function
+ * @param {Next} next -Calls the next operation
+ * @returns {Object} -Returns an object (error or response)
+ * @memberof AdminAuthMiddleware
+ */
 // eslint-disable-next-line consistent-return
 const verifyToken = async (req, res, next) => {
   try {
@@ -15,6 +23,10 @@ const verifyToken = async (req, res, next) => {
       jwt.verify(token, config.MUSIC_REVIEW_JWT_SECRET_KEY, tokenExpires.MUSIC_REVIEW_JWT_SIGN_OPTIONS, async (err, decodedToken) => {
         if (err) {
           return Response.error(res, 'unauthorized access', 401);
+        }
+
+        if (!decodedToken.is_admin) {
+          return Response.error(res, 'Access denied, contact support', 403);
         }
         const admin = await adminAuthServices.getAdminDetailsById(decodedToken.admin_id);
         delete admin.password;
@@ -30,12 +42,20 @@ const verifyToken = async (req, res, next) => {
   }
 };
 
+/**
+ * verifies the email address entered by an admin
+ * @param {Request} req -The request from the endpoint
+ * @param {Response} res -The response returned by the method/function
+ * @param {Next} next -Calls the next operation
+ * @returns {Object} -Returns an object (error or response)
+ * @memberof AdminAuthMiddleware
+ */
 const checkIfAdminEmailExists = async (req, res, next) => {
   let { email } = req.body;
   try {
     const email_address = await adminAuthServices.getAdminEmail(email);
     if (!email_address) {
-      return Response.error(res, 'the email you entered is invalid, please enter a valid mail', 402);
+      return Response.error(res, 'the email you entered is invalid, please enter a valid mail', 404);
     }
     return next();
   } catch (error) {
@@ -44,6 +64,14 @@ const checkIfAdminEmailExists = async (req, res, next) => {
   }
 };
 
+/**
+ * verifies the password entered by an admin
+ * @param {Request} req -The request from the endpoint
+ * @param {Response} res -The response returned by the method/function
+ * @param {Next} next -Calls the next operation
+ * @returns {Object} -Returns an object (error or response)
+ * @memberof AdminAuthMiddleware
+ */
 const verifyPassword = async (req, res, next) => {
   let { email, password } = req.body;
   try {
@@ -60,6 +88,14 @@ const verifyPassword = async (req, res, next) => {
   }
 };
 
+/**
+ * generates a JWT token for an admin
+ * @param {Request} req -The request from the endpoint
+ * @param {Response} res -The response returned by the method/function
+ * @param {Next} next -Calls the next operation
+ * @returns {Object} -Returns an object (error or response)
+ * @memberof AdminAuthMiddleware
+ */
 const generateToken = async (req, res, next) => {
   let { email } = req.body;
   try {
@@ -72,6 +108,15 @@ const generateToken = async (req, res, next) => {
     return error;
   }
 };
+
+/**
+ * generates token to reset an admin's password
+ * @param {Request} req -The request from the endpoint
+ * @param {Response} res -The response returned by the method/function
+ * @param {Next} next -Calls the next operation
+ * @returns {Object} -Returns an object (error or response)
+ * @memberof AdminAuthMiddleware
+ */
 const generateTokenForPasswordReset = async (req, res, next) => {
   let { email } = req.body;
   try {
@@ -85,6 +130,14 @@ const generateTokenForPasswordReset = async (req, res, next) => {
   }
 };
 
+/**
+ * verifies the token to reset an admin's password
+ * @param {Request} req -The request from the endpoint
+ * @param {Response} res -The response returned by the method/function
+ * @param {Next} next -Calls the next operation
+ * @returns {Object} -Returns an object (error or response)
+ * @memberof AdminAuthMiddleware
+ */
 const verifyResetToken = async (req, res, next) => {
   try {
     let { token } = req.body;

@@ -2,6 +2,13 @@ import * as adminAuthServices from '../services/service.admin.auth';
 import mails from '../../lib/utils/sendMails';
 import Response from '../../lib/http/lib.http.response';
 
+/**
+ * logs in an admin
+ * @param {Request} req -The request from the endpoint
+ * @param {Response} res -The response returned by the method/function
+ * @returns {Object} -Returns an object (error or response)
+ * @memberof AuthController
+ */
 const adminLogin = async (req, res) => {
   let { email } = req.body;
   let { token } = req;
@@ -19,6 +26,13 @@ const adminLogin = async (req, res) => {
   }
 };
 
+/**
+ * sends a token to the admin to reset his password
+ * @param {Request} req -The request from the endpoint
+ * @param {Response} res -The response returned by the method/function
+ * @returns {Object} -Returns an object (error or response)
+ * @memberof AuthController
+ */
 const forgotPassword = async (req, res) => {
   try {
     const { email } = req.body;
@@ -32,6 +46,13 @@ const forgotPassword = async (req, res) => {
   }
 };
 
+/**
+ * resets the password of the password of the admin
+ * @param {Request} req -The request from the endpoint
+ * @param {Response} res -The response returned by the method/function
+ * @returns {Object} -Returns an object (error or response)
+ * @memberof AuthController
+ */
 const resetPassword = async (req, res) => {
   try {
     const { email } = req.admin;

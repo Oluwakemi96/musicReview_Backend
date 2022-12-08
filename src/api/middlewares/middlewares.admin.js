@@ -4,13 +4,20 @@ import * as adminServices from '../services/service.admin';
 import Response from '../../lib/http/lib.http.response';
 import hash from '../../lib/hash/hash.auth';
 
+/**
+ * verifies the password token entered by the admin
+ * @param {Request} req -The request from the endpoint
+ * @param {Response} res -The response returned by the method/function
+ * @param {Next} next -Calls the next operation
+ * @returns {Object} -Returns an object (error or response)
+ * @memberof AdminMiddleware
+ */
 const checkPasswordToken = async (req, res, next) => {
   try {
     let { id } = req.params;
     let { password_token } = req.body;
     const existingToken = await adminServices.getPasswordToken(id);
     // eslint-disable-next-line eqeqeq
-    console.log(existingToken);
     if (existingToken.password_token != password_token) {
       return Response.error(res, 'unauthorised access', 401);
     }
@@ -21,9 +28,17 @@ const checkPasswordToken = async (req, res, next) => {
   }
 };
 
+/**
+ * generates a random token string
+ * @param {Request} req -The request from the endpoint
+ * @param {Response} res -The response returned by the method/function
+ * @param {Next} next -Calls the next operation
+ * @returns {Object} -Returns an object (error or response)
+ * @memberof AdminMiddleware
+ */
 const generateRandomStringToken = async (req, res, next) => {
   try {
-    const adminToken = await hash.generateRandomString(50);
+    const adminToken = await hash.generateRandomString(10);
     req.adminToken = adminToken;
     return next();
   } catch (error) {
@@ -32,6 +47,14 @@ const generateRandomStringToken = async (req, res, next) => {
   }
 };
 
+/**
+ * checks the type of an admin
+ * @param {Request} req -The request from the endpoint
+ * @param {Response} res -The response returned by the method/function
+ * @param {Next} next -Calls the next operation
+ * @returns {Object} -Returns an object (error or response)
+ * @memberof AdminMiddleware
+ */
 const checkIfAdminIsRegular = async (req, res, next) => {
   try {
     let { id } = req.params;
@@ -39,18 +62,26 @@ const checkIfAdminIsRegular = async (req, res, next) => {
     if (admins.password && admins.type == 'regular') {
       return next();
     }
-    return Response.error(res, 'admin has not verified his email address', 400);
+    return Response.error(res, 'admin has not verified his email address', 401);
   } catch (error) {
     console.log(error);
     return error;
   }
 };
 
+/**
+ * checks the status of an admin
+ * @param {Request} req -The request from the endpoint
+ * @param {Response} res -The response returned by the method/function
+ * @param {Next} next -Calls the next operation
+ * @returns {Object} -Returns an object (error or response)
+ * @memberof AdminMiddleware
+ */
 const checkAdminStatus = async (req, res, next) => {
   try {
     let { id } = req.admin;
     const admin = await adminServices.getAdmins(id);
-    if (admin.status === 'deactivated' || admin.status === 'suspended') { return Response.error(res, 'you do not have the permission to access this route, please contact support', 401); }
+    if (admin.status === 'deactivated' || admin.status === 'suspended') { return Response.error(res, 'Access denied, please contact support', 401); }
     return next();
   } catch (error) {
     console.log(error);
@@ -58,12 +89,20 @@ const checkAdminStatus = async (req, res, next) => {
   }
 };
 
+/**
+ * fetches admin
+ * @param {Request} req -The request from the endpoint
+ * @param {Response} res -The response returned by the method/function
+ * @param {Next} next -Calls the next operation
+ * @returns {Object} -Returns an object (error or response)
+ * @memberof AdminMiddleware
+ */
 const getsuperAdmin = async (req, res, next) => {
   try {
     let { id } = req.admin;
     const admin = await adminServices.getAdmins(id);
     if (admin.type !== 'super') {
-      return Response.error(res, 'you are not authorized to access this route, please contact support', 401);
+      return Response.error(res, 'Access denied, please contact support', 401);
     }
     return next();
   } catch (error) {

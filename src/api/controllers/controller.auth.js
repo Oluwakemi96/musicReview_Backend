@@ -3,6 +3,13 @@ import * as authServices from '../services/service.auth';
 import Response from '../../lib/http/lib.http.response';
 import mails from '../../lib/utils/sendMails';
 
+/**
+ * signs up a user
+ * @param {Request} req -The request from the endpoint
+ * @param {Response} res -The response returned by the method/function
+ * @returns {Object} -Returns an object (error or response)
+ * @memberof AuthController
+ */
 const registerUser = async (req, res) => {
   const {
     body: {
@@ -21,6 +28,13 @@ const registerUser = async (req, res) => {
   }
 };
 
+/**
+ * updates a user's status
+ * @param {Request} req -The request from the endpoint
+ * @param {Response} res -The response returned by the method/function
+ * @returns {Object} -Returns an object (error or response)
+ * @memberof AuthController
+ */
 const updateUserStatus = async (req, res) => {
   try {
     const { status } = req.body;
@@ -33,6 +47,13 @@ const updateUserStatus = async (req, res) => {
   }
 };
 
+/**
+ * logs in a user
+ * @param {Request} req -The request from the endpoint
+ * @param {Response} res -The response returned by the method/function
+ * @returns {Object} -Returns an object (error or response)
+ * @memberof AuthController
+ */
 const login = async (req, res) => {
   let { email_address } = req.body;
   let { token } = req;
@@ -53,6 +74,13 @@ const login = async (req, res) => {
   }
 };
 
+/**
+ * sends a mail with a token to reset a user's password
+ * @param {Request} req -The request from the endpoint
+ * @param {Response} res -The response returned by the method/function
+ * @returns {Object} -Returns an object (error or response)
+ * @memberof AuthController
+ */
 const forgotPassword = async (req, res) => {
   let { email_address } = req.body;
   let { token } = req;
@@ -65,6 +93,13 @@ const forgotPassword = async (req, res) => {
   }
 };
 
+/**
+ * resets a user's password
+ * @param {Request} req -The request from the endpoint
+ * @param {Response} res -The response returned by the method/function
+ * @returns {Object} -Returns an object (error or response)
+ * @memberof AuthController
+ */
 const resetPassword = async (req, res) => {
   const { email_address } = req.user;
   const { hashedPassword } = req;

@@ -2,6 +2,7 @@
 export default {
   getAllSongs: `
         SELECT 
+            id,
             song_link, 
             song_title, 
             artist
@@ -12,6 +13,7 @@ export default {
 
   getSongByTitle: `
         SELECT 
+            id,
             song_link,
             song_title, 
             artist
@@ -63,7 +65,7 @@ export default {
     SELECT 
         reviews.id,
         reviews.review,
-        reviews.created_at,
+        reviews.created_at::DATE,
         users.full_name,
     COUNT (reviews_likes.song_id) AS total_review_likes	
     FROM 
@@ -201,6 +203,7 @@ export default {
   `,
   getReviewLike: `
     SELECT 
+        id,
         review_id,
         user_id,
         song_id
@@ -302,6 +305,15 @@ export default {
         review_id = $2
     AND 
         song_id = $3
+  `,
+
+  getReviewIds: `
+     SELECT 
+        id
+     FROM
+        reviews
+    WHERE 
+        id = $1
   `,
 
 };

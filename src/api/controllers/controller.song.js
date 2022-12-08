@@ -4,6 +4,13 @@ import * as songServices from '../services/service.song';
 import Response from '../../lib/http/lib.http.response';
 
 // eslint-disable-next-line consistent-return
+/**
+ * fetches all songs available
+ * @param {Request} req -The request from the endpoint
+ * @param {Response} res -The response returned by the method/function
+ * @returns {Object} -Returns an object (error or response)
+ * @memberof SongController
+ */
 const allSongs = async (req, res) => {
   try {
     const songs = await songServices.fetchSongs();
@@ -14,6 +21,13 @@ const allSongs = async (req, res) => {
   }
 };
 
+/**
+ * signs up a user
+ * @param {Request} req -The request from the endpoint
+ * @param {Response} res -The response returned by the method/function
+ * @returns {Object} -Returns an object (error or response)
+ * @memberof SongController
+ */
 const songByTitle = async (req, res) => {
   const { song_title } = req.query;
   try {
@@ -30,6 +44,13 @@ const songByTitle = async (req, res) => {
   }
 };
 
+/**
+ * fetches songs by genre
+ * @param {Request} req -The request from the endpoint
+ * @param {Response} res -The response returned by the method/function
+ * @returns {Object} -Returns an object (error or response)
+ * @memberof SongController
+ */
 const SongByGenre = async (req, res) => {
   const { genre } = req.query;
   try {
@@ -43,6 +64,13 @@ const SongByGenre = async (req, res) => {
   }
 };
 
+/**
+ * fetches all the details of a particular song
+ * @param {Request} req -The request from the endpoint
+ * @param {Response} res -The response returned by the method/function
+ * @returns {Object} -Returns an object (error or response)
+ * @memberof SongController
+ */
 const getAllSongDetails = async (req, res) => {
   try {
     const { song_id } = req.params;
@@ -58,6 +86,13 @@ const getAllSongDetails = async (req, res) => {
   }
 };
 
+/**
+ * likes a particular song
+ * @param {Request} req -The request from the endpoint
+ * @param {Response} res -The response returned by the method/function
+ * @returns {Object} -Returns an object (error or response)
+ * @memberof SongController
+ */
 const likeAsong = async (req, res) => {
   let { id } = req.user;
   let user_id = id;
@@ -70,6 +105,13 @@ const likeAsong = async (req, res) => {
   }
 };
 
+/**
+ * dislikes a particular song
+ * @param {Request} req -The request from the endpoint
+ * @param {Response} res -The response returned by the method/function
+ * @returns {Object} -Returns an object (error or response)
+ * @memberof SongController
+ */
 const dislikeAsong = async (req, res) => {
   let { id } = req.user;
   let user_id = id;
@@ -82,6 +124,13 @@ const dislikeAsong = async (req, res) => {
   }
 };
 
+/**
+ * rates a particular song
+ * @param {Request} req -The request from the endpoint
+ * @param {Response} res -The response returned by the method/function
+ * @returns {Object} -Returns an object (error or response)
+ * @memberof SongController
+ */
 const rateAsong = async (req, res) => {
   let { user: { id }, body: { rating } } = req;
   let user_id = id;
@@ -100,6 +149,13 @@ const rateAsong = async (req, res) => {
   }
 };
 
+/**
+ * reviews a particular song
+ * @param {Request} req -The request from the endpoint
+ * @param {Response} res -The response returned by the method/function
+ * @returns {Object} -Returns an object (error or response)
+ * @memberof SongController
+ */
 const reviewSong = async (req, res) => {
   let user_id = req.user.id;
   let { song_id } = req.params;
@@ -112,10 +168,16 @@ const reviewSong = async (req, res) => {
   }
 };
 
+/**
+ * likes the review of a particular song
+ * @param {Request} req -The request from the endpoint
+ * @param {Response} res -The response returned by the method/function
+ * @returns {Object} -Returns an object (error or response)
+ * @memberof SongController
+ */
 const likeReview = async (req, res) => {
-  let { review_id } = req.params;
+  let { review_id, song_id } = req.params;
   let user_id = req.user.id;
-  let { song_id } = req.params;
   try {
     const likedReview = await songServices.likeAreview(review_id, user_id, song_id);
     return Response.success(res, 'review liked successfully', 200, likedReview);
@@ -125,6 +187,13 @@ const likeReview = async (req, res) => {
   }
 };
 
+/**
+ * fetches the reviews of a particular song
+ * @param {Request} req -The request from the endpoint
+ * @param {Response} res -The response returned by the method/function
+ * @returns {Object} -Returns an object (error or response)
+ * @memberof SongController
+ */
 const getAsongReview = async (req, res) => {
   let { song_id } = req.params;
   try {
@@ -136,6 +205,13 @@ const getAsongReview = async (req, res) => {
   }
 };
 
+/**
+ * fetches the users that like a particular song
+ * @param {Request} req -The request from the endpoint
+ * @param {Response} res -The response returned by the method/function
+ * @returns {Object} -Returns an object (error or response)
+ * @memberof SongController
+ */
 const getUsersThatLikeAsong = async (req, res) => {
   try {
     let { song_id } = req.params;
@@ -148,6 +224,13 @@ const getUsersThatLikeAsong = async (req, res) => {
   }
 };
 
+/**
+ * fetches the users that dislikes a particular song
+ * @param {Request} req -The request from the endpoint
+ * @param {Response} res -The response returned by the method/function
+ * @returns {Object} -Returns an object (error or response)
+ * @memberof SongController
+ */
 const getUsersThatDislikeAsong = async (req, res) => {
   try {
     let { song_id } = req.params;
@@ -161,6 +244,13 @@ const getUsersThatDislikeAsong = async (req, res) => {
   }
 };
 
+/**
+ * get users that like a review
+ * @param {Request} req -The request from the endpoint
+ * @param {Response} res -The response returned by the method/function
+ * @returns {Object} -Returns an object (error or response)
+ * @memberof SongController
+ */
 const getUsersThatLikesAReview = async (req, res) => {
   try {
     let { song_id, review_id } = req.params;
@@ -173,6 +263,13 @@ const getUsersThatLikesAReview = async (req, res) => {
   }
 };
 
+/**
+ * deletes a user's review
+ * @param {Request} req -The request from the endpoint
+ * @param {Response} res -The response returned by the method/function
+ * @returns {Object} -Returns an object (error or response)
+ * @memberof SongController
+ */
 const deleteAuserReview = async (req, res) => {
   try {
     let user_id = req.user.id;

@@ -2,6 +2,14 @@ import * as adminServices from '../services/service.admin';
 import Response from '../../lib/http/lib.http.response';
 import mails from '../../lib/utils/sendMails';
 
+/**
+ * creates a regular admin
+ * @param {Request} req -The request from the endpoint
+ * @param {Response} res -The response returned by the method/function
+ * @returns {Object} -Returns an object (error or response)
+ * @memberof AdminController
+ */
+
 const createAdmin = async (req, res) => {
   try {
     let {
@@ -19,7 +27,14 @@ const createAdmin = async (req, res) => {
   }
 };
 
-const updateAdmin = async (req, res) => {
+/**
+ * updates a regular admin's password
+ * @param {Request} req -The request from the endpoint
+ * @param {Response} res -The response returned by the method/function
+ * @returns {Object} -Returns an object (error or response)
+ * @memberof AdminController
+ */
+const updateAdminPassword = async (req, res) => {
   try {
     const { hashedPassword } = req;
     const { id } = req.params;
@@ -30,6 +45,14 @@ const updateAdmin = async (req, res) => {
     return error;
   }
 };
+
+/**
+ * updates a regular admin's status
+ * @param {Request} req -The request from the endpoint
+ * @param {Response} res -The response returned by the method/function
+ * @returns {Object} -Returns an object (error or response)
+ * @memberof AdminController
+ */
 
 const updateAdminStatus = async (req, res) => {
   try {
@@ -42,6 +65,13 @@ const updateAdminStatus = async (req, res) => {
   }
 };
 
+/**
+ * add songs to the database
+ * @param {Request} req -The request from the endpoint
+ * @param {Response} res -The response returned by the method/function
+ * @returns {Object} -Returns an object (error or response)
+ * @memberof AdminController
+ */
 const addSongs = async (req, res) => {
   try {
     const {
@@ -54,6 +84,13 @@ const addSongs = async (req, res) => {
   }
 };
 
+/**
+ * deletes song from the database
+ * @param {Request} req -The request from the endpoint
+ * @param {Response} res -The response returned by the method/function
+ * @returns {Object} -Returns an object (error or response)
+ * @memberof AdminController
+ */
 const deleteSongs = async (req, res) => {
   try {
     const { song_id } = req.params;
@@ -63,6 +100,14 @@ const deleteSongs = async (req, res) => {
     return error;
   }
 };
+
+/**
+ * edits songs
+ * @param {Request} req -The request from the endpoint
+ * @param {Response} res -The response returned by the method/function
+ * @returns {Object} -Returns an object (error or response)
+ * @memberof AdminController
+ */
 
 const editSongs = async (req, res) => {
   try {
@@ -84,6 +129,13 @@ const editSongs = async (req, res) => {
   }
 };
 
+/**
+ * gets all the song
+ * @param {Request} req -The request from the endpoint
+ * @param {Response} res -The response returned by the method/function
+ * @returns {Object} -Returns an object (error or response)
+ * @memberof AdminController
+ */
 const getAllSongs = async (req, res) => {
   try {
     const songs = await adminServices.getAllSongs();
@@ -93,6 +145,13 @@ const getAllSongs = async (req, res) => {
   }
 };
 
+/**
+ * gets song by genre
+ * @param {Request} req -The request from the endpoint
+ * @param {Response} res -The response returned by the method/function
+ * @returns {Object} -Returns an object (error or response)
+ * @memberof AdminController
+ */
 const getSongsByGenre = async (req, res) => {
   try {
     let { genre } = req.query;
@@ -103,6 +162,13 @@ const getSongsByGenre = async (req, res) => {
   }
 };
 
+/**
+ * gets reviews of a particular song
+ * @param {Request} req -The request from the endpoint
+ * @param {Response} res -The response returned by the method/function
+ * @returns {Object} -Returns an object (error or response)
+ * @memberof AdminController
+ */
 const getSongReviews = async (req, res) => {
   try {
     let { song_id } = req.params;
@@ -113,6 +179,13 @@ const getSongReviews = async (req, res) => {
   }
 };
 
+/**
+ * deletes a user's review
+ * @param {Request} req -The request from the endpoint
+ * @param {Response} res -The response returned by the method/function
+ * @returns {Object} -Returns an object (error or response)
+ * @memberof AdminController
+ */
 const deleteUserReview = async (req, res) => {
   try {
     let { user_id } = req.params;
@@ -123,6 +196,13 @@ const deleteUserReview = async (req, res) => {
   }
 };
 
+/**
+ * deactivates an admin
+ * @param {Request} req -The request from the endpoint
+ * @param {Response} res -The response returned by the method/function
+ * @returns {Object} -Returns an object (error or response)
+ * @memberof AdminController
+ */
 const deactivateAdmin = async (req, res) => {
   try {
     let { admin_id } = req.params;
@@ -135,6 +215,14 @@ const deactivateAdmin = async (req, res) => {
     return error;
   }
 };
+
+/**
+ * reactivates a suspended or deactivated admin
+ * @param {Request} req -The request from the endpoint
+ * @param {Response} res -The response returned by the method/function
+ * @returns {Object} -Returns an object (error or response)
+ * @memberof AdminController
+ */
 const reactivateAdmin = async (req, res) => {
   try {
     let { admin_id } = req.params;
@@ -147,6 +235,14 @@ const reactivateAdmin = async (req, res) => {
     return error;
   }
 };
+
+/**
+ * suspends an admin
+ * @param {Request} req -The request from the endpoint
+ * @param {Response} res -The response returned by the method/function
+ * @returns {Object} -Returns an object (error or response)
+ * @memberof AdminController
+ */
 const suspendAdmin = async (req, res) => {
   try {
     let { admin_id } = req.params;
@@ -160,6 +256,13 @@ const suspendAdmin = async (req, res) => {
   }
 };
 
+/**
+ * deactivates a user
+ * @param {Request} req -The request from the endpoint
+ * @param {Response} res -The response returned by the method/function
+ * @returns {Object} -Returns an object (error or response)
+ * @memberof AdminController
+ */
 const deactivateUser = async (req, res) => {
   try {
     const { status } = req.body;
@@ -171,6 +274,14 @@ const deactivateUser = async (req, res) => {
     return (error);
   }
 };
+
+/**
+ * suspends a user
+ * @param {Request} req -The request from the endpoint
+ * @param {Response} res -The response returned by the method/function
+ * @returns {Object} -Returns an object (error or response)
+ * @memberof AdminController
+ */
 const suspendUser = async (req, res) => {
   try {
     const { status } = req.body;
@@ -182,6 +293,14 @@ const suspendUser = async (req, res) => {
     return (error);
   }
 };
+
+/**
+ *reactivates a suspended or deactivated user
+ * @param {Request} req -The request from the endpoint
+ * @param {Response} res -The response returned by the method/function
+ * @returns {Object} -Returns an object (error or response)
+ * @memberof AdminController
+ */
 const reactivateUser = async (req, res) => {
   try {
     const { status } = req.body;
@@ -194,6 +313,13 @@ const reactivateUser = async (req, res) => {
   }
 };
 
+/**
+ * gets all the details of a particular song
+ * @param {Request} req -The request from the endpoint
+ * @param {Response} res -The response returned by the method/function
+ * @returns {Object} -Returns an object (error or response)
+ * @memberof AdminController
+ */
 const getAllSongDetails = async (req, res) => {
   try {
     const { song_id } = req.params;
@@ -211,7 +337,7 @@ const getAllSongDetails = async (req, res) => {
 
 export default {
   createAdmin,
-  updateAdmin,
+  updateAdminPassword,
   updateAdminStatus,
   addSongs,
   deleteSongs,

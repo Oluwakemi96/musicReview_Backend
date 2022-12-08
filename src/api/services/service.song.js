@@ -135,3 +135,7 @@ export const deleteAreviewLike = async (user_id, review_id, song_id) => {
   const deletedLike = await db.oneOrNone(songQueries.deleteAreviewLike, [user_id, review_id, song_id]);
   return deletedLike;
 };
+export const getReviewIds = async (review_id) => {
+  const reviewIds = await db.oneOrNone(songQueries.getReviewIds, [review_id]);
+  return reviewIds;
+};

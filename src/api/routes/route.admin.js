@@ -23,7 +23,7 @@ adminRoute.post(
   Model(Schema.updateAdminId, 'params'),
   adminMiddleware.checkPasswordToken,
   authMiddleware.hashPassword,
-  admin.updateAdmin,
+  admin.updateAdminPassword,
 
 );
 

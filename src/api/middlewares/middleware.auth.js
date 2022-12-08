@@ -7,6 +7,14 @@ import Response from '../../lib/http/lib.http.response';
 import hash from '../../lib/hash/hash.auth';
 
 // eslint-disable-next-line consistent-return
+/**
+ * verifies users token
+ * @param {Request} req -The request from the endpoint
+ * @param {Response} res -The response returned by the method/function
+ * @param {Next} next -Calls the next operation
+ * @returns {Object} -Returns an object (error or response)
+ * @memberof AuthMiddleware
+ */
 const verifyToken = async (req, res, next) => {
   try {
     const tokenExists = req.headers && req.headers.authorization;
@@ -15,6 +23,9 @@ const verifyToken = async (req, res, next) => {
       jwt.verify(token, config.MUSIC_REVIEW_JWT_SECRET_KEY, tokenExpires.MUSIC_REVIEW_JWT_SIGN_OPTIONS, async (err, decodedToken) => {
         if (err) {
           return res.status(401).json({ message: 'Unauthorized access.' });
+        }
+        if (!decodedToken.is_user) {
+          return Response.error(res, 'Access denied, contact support', 403);
         }
         const user = await authServices.getUserById(decodedToken.user_id);
         delete user.password;
@@ -30,11 +41,19 @@ const verifyToken = async (req, res, next) => {
   }
 };
 
+/**
+ * verifies the token for reset password
+ * @param {Request} req -The request from the endpoint
+ * @param {Response} res -The response returned by the method/function
+ * @param {Next} next -Calls the next operation
+ * @returns {Object} -Returns an object (error or response)
+ * @memberof AuthMiddleware
+ */
 const verifyResetToken = async (req, res, next) => {
   const tokenExists = req.body;
   try {
     if (!tokenExists) {
-      return res.status(401).json({
+      return res.status(411).json({
         message: 'missing token',
       });
     }
@@ -54,6 +73,14 @@ const verifyResetToken = async (req, res, next) => {
   }
 };
 
+/**
+ * checks if the email entered already exists
+ * @param {Request} req -The request from the endpoint
+ * @param {Response} res -The response returned by the method/function
+ * @param {Next} next -Calls the next operation
+ * @returns {Object} -Returns an object (error or response)
+ * @memberof AuthMiddleware
+ */
 const checkIfEmailExists = async (req, res, next) => {
   try {
     const { email_address } = req.body;
@@ -66,12 +93,20 @@ const checkIfEmailExists = async (req, res, next) => {
     return error;
   }
 };
+/**
+ * checks if the email entered is valid
+ * @param {Request} req -The request from the endpoint
+ * @param {Response} res -The response returned by the method/function
+ * @param {Next} next -Calls the next operation
+ * @returns {Object} -Returns an object (error or response)
+ * @memberof AuthMiddleware
+ */
 const checkIfEmailExistsForLogin = async (req, res, next) => {
   try {
     const { email_address } = req.body;
     const existingEmail = await authServices.userEmail(email_address.trim().toLowerCase());
     if (!existingEmail) {
-      return Response.error(res, 'email does not exist on our database, please login with a valid email', 400);
+      return Response.error(res, 'email does not exist on our database, please login with a valid email', 404);
     }
     return next();
   } catch (error) {
@@ -79,12 +114,20 @@ const checkIfEmailExistsForLogin = async (req, res, next) => {
   }
 };
 
+/**
+ * checks if the username entered is valid
+ * @param {Request} req -The request from the endpoint
+ * @param {Response} res -The response returned by the method/function
+ * @param {Next} next -Calls the next operation
+ * @returns {Object} -Returns an object (error or response)
+ * @memberof AuthMiddleware
+ */
 const checkIfUsernameExists = async (req, res, next) => {
   try {
     const { username } = req.body;
     const existingUsername = await authServices.usernameCheck(username.trim().toLowerCase());
     if (existingUsername) {
-      return Response.error(res, 'username already exist', 400);
+      return Response.error(res, 'username already exist', 403);
     }
     return next();
   } catch (error) {
@@ -111,6 +154,14 @@ const hashPassword = async (req, res, next) => {
   }
 };
 
+/**
+ * verifies the password entered
+ * @param {Request} req -The request from the endpoint
+ * @param {Response} res -The response returned by the method/function
+ * @param {Next} next -Calls the next operation
+ * @returns {Object} -Returns an object (error or response)
+ * @memberof AuthMiddleware
+ */
 const verifyPassword = async (req, res, next) => {
   try {
     const { email_address, password } = req.body;
@@ -126,6 +177,14 @@ const verifyPassword = async (req, res, next) => {
   }
 };
 
+/**
+ * generates a JWT token for a user
+ * @param {Request} req -The request from the endpoint
+ * @param {Response} res -The response returned by the method/function
+ * @param {Next} next -Calls the next operation
+ * @returns {Object} -Returns an object (error or response)
+ * @memberof AuthMiddleware
+ */
 const generateToken = async (req, res, next) => {
   try {
     let { email_address } = req.body;
@@ -138,6 +197,14 @@ const generateToken = async (req, res, next) => {
   }
 };
 
+/**
+ * generates a random string token for a user
+ * @param {Request} req -The request from the endpoint
+ * @param {Response} res -The response returned by the method/function
+ * @param {Next} next -Calls the next operation
+ * @returns {Object} -Returns an object (error or response)
+ * @memberof AuthMiddleware
+ */
 const generateRandomStringToken = async (req, res, next) => {
   try {
     const userToken = await hash.generateRandomString(50);
@@ -149,6 +216,14 @@ const generateRandomStringToken = async (req, res, next) => {
   }
 };
 
+/**
+ * compares the verification token entered
+ * @param {Request} req -The request from the endpoint
+ * @param {Response} res -The response returned by the method/function
+ * @param {Next} next -Calls the next operation
+ * @returns {Object} -Returns an object (error or response)
+ * @memberof AuthMiddleware
+ */
 const compareUserVerificationToken = async (req, res, next) => {
   try {
     const { token } = req.body;
@@ -156,7 +231,7 @@ const compareUserVerificationToken = async (req, res, next) => {
     const user = await authServices.getUserById(user_id);
     console.log(user);
     if (token !== user.password_token) {
-      return Response.error(res, 'email verification failed', 403);
+      return Response.error(res, 'email verification failed', 401);
     }
     return next();
   } catch (error) {
@@ -165,12 +240,20 @@ const compareUserVerificationToken = async (req, res, next) => {
   }
 };
 
+/**
+ * checks the status of the user
+ * @param {Request} req -The request from the endpoint
+ * @param {Response} res -The response returned by the method/function
+ * @param {Next} next -Calls the next operation
+ * @returns {Object} -Returns an object (error or response)
+ * @memberof AuthMiddleware
+ */
 const checkUserStatus = async (req, res, next) => {
   try {
     const { email_address } = req.body;
     const user = await authServices.getUserByEmail(email_address);
     if (user.status === 'inactive' && user.email_address === email_address) {
-      return Response.error(res, 'kindly verify your email address to login', 403);
+      return Response.error(res, 'kindly verify your email address to login', 401);
     }
     return next();
   } catch (error) {

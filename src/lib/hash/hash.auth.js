@@ -32,6 +32,7 @@ const sessionToken = async (user, type) => {
   const expTime = type === 'login' ? tokenExpires.MUSIC_REVIEW_JWT_SIGN_OPTIONS : tokenExpires.MUSIC_REVIEW_JWT_TOKEN_EXPIRE;
   let token = jwt.sign({
     user_id: user.id,
+    is_user: true,
   }, config.MUSIC_REVIEW_JWT_SECRET_KEY, expTime);
   return token;
 };
@@ -40,6 +41,7 @@ const adminSessionToken = async (admin, type) => {
   const expTime = type === 'login' ? tokenExpires.MUSIC_REVIEW_JWT_SIGN_OPTIONS : tokenExpires.MUSIC_REVIEW_JWT_TOKEN_EXPIRE;
   let token = jwt.sign({
     admin_id: admin.id,
+    is_admin: true,
   }, config.MUSIC_REVIEW_JWT_SECRET_KEY, expTime);
   return token;
 };

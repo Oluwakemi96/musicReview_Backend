@@ -73,6 +73,7 @@ export default {
   `,
   getSong: `
     SELECT 
+        id,
         song_title,
         year_of_release,
         genre,
@@ -87,6 +88,7 @@ export default {
 
   getAllSongs: `
   SELECT 
+    id,
     song_title,
     year_of_release,
     genre,
@@ -99,6 +101,7 @@ export default {
   `,
   getSongsByGenre:
     `SELECT
+         id,
          song_title,
          year_of_release,
          genre,
@@ -131,6 +134,7 @@ export default {
 
   getAllAdmins: `
         SELECT 
+            id,
             first_name,
             last_name,
             email,
@@ -193,7 +197,7 @@ export default {
     SELECT 
         reviews.id,
         reviews.review,
-        reviews.created_at,
+        reviews.created_at::DATE,
         users.full_name,
     COUNT (reviews_likes.song_id) AS total_review_likes	
     FROM 

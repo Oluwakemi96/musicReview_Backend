@@ -1,5 +1,12 @@
 import Response from '../../lib/http/lib.http.response';
 
+/**
+ * Joi validation of request parameters
+ * @param {function} schema - the Joi schema
+ * @param {string} type - the request type
+ * @returns {object} - Returns an object (error or response).
+ * @memberof ModelMiddleware
+ */
 const validateData = (schema, type) => async (req, res, next) => {
   try {
     const getType = {
