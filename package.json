@@ -3,16 +3,19 @@
   "version": "1.0.0",
   "description": "song reviews and rating",
   "main": "index.js",
-  "type": "commonjs",
+
   "scripts": {
     "lint": "eslint --fix src/ --ext .js",
-    "start": "node index.js",
-    "dev": "nodemon -r esm src/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "babel-node src/index.js",
+    "dev": "nodemon --exec babel-node src/index.js",
+    "pretest": "cross-env MUSIC_REVIEW_NODE_ENV=test npm run lint && cross-env MUSIC_REVIEW_NODE_ENV=test npm run migrate:reset:test && cross-env MUSIC_REVIEW_NODE_ENV=test npm run migrate:up:test",
+    "test": "cross-env MUSIC_REVIEW_NODE_ENV=test mocha --require @babel/register test/**/ --timeout 120000 --exit",
     "migrate:up": "db-migrate up --config database.json",
     "migrate:down": "db-migrate down --config database.json",
     "migrate:reset": "db-migrate reset --config database.json",
-    "migrate:create": "db-migrate create --config database.json"
+    "migrate:create": "db-migrate create --config database.json",
+    "migrate:up:test": "db-migrate up --config database.json -e test",
+    "migrate:reset:test": "db-migrate reset --config database.json -e test"
   },
   "repository": {
     "type": "git",
@@ -49,9 +52,20 @@
     "winston": "^3.8.2"
   },
   "devDependencies": {
+    "@babel/cli": "^7.19.3",
+    "@babel/core": "^7.20.5",
+    "@babel/node": "^7.20.5",
+    "@babel/preset-env": "^7.20.2",
+    "@babel/register": "^7.18.9",
+    "assert": "^2.0.0",
+    "chai": "^4.3.7",
+    "chai-http": "^4.3.0",
+    "cross-env": "^7.0.3",
     "eslint": "^8.27.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.26.0",
-    "nodemon": "^2.0.20"
+    "mocha": "^10.1.0",
+    "nodemon": "^2.0.20",
+    "supertest": "^6.3.3"
   }
 }

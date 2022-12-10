@@ -1,6 +1,6 @@
-import * as songServices from '../services/service.song';
-import * as authServices from '../services/service.auth';
-import Response from '../../lib/http/lib.http.response';
+import * as songServices from '../services/service.song.js';
+import * as authServices from '../services/service.auth.js';
+import Response from '../../lib/http/lib.http.response.js';
 
 /**
  * checks if a song's id exists

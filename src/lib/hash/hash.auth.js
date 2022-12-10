@@ -1,8 +1,8 @@
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import Crypto from 'crypto';
-import config from '../../config';
-import tokenExpires from '../utils/jwt';
+import config from '../../config/index.js';
+import tokenExpires from '../utils/jwt.js';
 
 const generateRandomString = (size) => {
   try {

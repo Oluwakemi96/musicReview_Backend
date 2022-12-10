@@ -1,6 +1,6 @@
 /* eslint-disable consistent-return */
 import nodemailer from 'nodemailer';
-import config from '../../config/index';
+import config from '../../config/index.js';
 
 let transporter = nodemailer.createTransport({
   service: 'gmail',

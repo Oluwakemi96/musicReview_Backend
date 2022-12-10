@@ -1,5 +1,5 @@
-import db from '../../config/db/index';
-import adminAuthQueries from '../queries/query.admin.auth';
+import db from '../../config/db/index.js';
+import adminAuthQueries from '../queries/query.admin.auth.js';
 
 export const getAdminEmail = async (email) => {
   const email_address = await db.oneOrNone(adminAuthQueries.findAdminEmail, [email]);

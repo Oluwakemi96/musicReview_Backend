@@ -1,4 +1,4 @@
-import Response from '../../lib/http/lib.http.response';
+import Response from '../../lib/http/lib.http.response.js';
 
 /**
  * Joi validation of request parameters

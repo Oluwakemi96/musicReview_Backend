@@ -1,9 +1,9 @@
-import db from '../../config/db/index';
-import authQueries from '../queries/query.auth';
+import db from '../../config/db/index.js';
+import authQueries from '../queries/query.auth.js';
 
 export const registerUser = async (full_name, username, password, email_address, password_token) => {
   // eslint-disable-next-line max-len
-  const user = await db.any(authQueries.registerUser, [full_name, username, password, email_address, password_token]);
+  const user = await db.oneOrNone(authQueries.registerUser, [full_name, username, password, email_address, password_token]);
   return user;
 };
 

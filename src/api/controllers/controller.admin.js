@@ -1,6 +1,6 @@
-import * as adminServices from '../services/service.admin';
-import Response from '../../lib/http/lib.http.response';
-import mails from '../../lib/utils/sendMails';
+import * as adminServices from '../services/service.admin.js';
+import Response from '../../lib/http/lib.http.response.js';
+import mails from '../../lib/utils/sendMails.js';
 
 /**
  * creates a regular admin
@@ -323,11 +323,12 @@ const reactivateUser = async (req, res) => {
 const getAllSongDetails = async (req, res) => {
   try {
     const { song_id } = req.params;
-    const allSongDetails = {};
-    const songDetails = await adminServices.getSongDetails(song_id);
+    const basicDetails = await adminServices.getSongDetails(song_id);
     const reviewDetails = await adminServices.getReviewDetails(song_id);
-    allSongDetails.details = songDetails;
-    allSongDetails.reviews = reviewDetails;
+    const allSongDetails = {
+      ...basicDetails,
+      reviews: reviewDetails,
+    };
     return Response.success(res, 'song details fetched successfully', 200, allSongDetails);
   } catch (error) {
     console.log(error);

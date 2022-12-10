@@ -1,8 +1,8 @@
 /* eslint-disable consistent-return */
 /* eslint-disable eqeqeq */
-import * as adminServices from '../services/service.admin';
-import Response from '../../lib/http/lib.http.response';
-import hash from '../../lib/hash/hash.auth';
+import * as adminServices from '../services/service.admin.js';
+import Response from '../../lib/http/lib.http.response.js';
+import hash from '../../lib/hash/hash.auth.js';
 
 /**
  * verifies the password token entered by the admin

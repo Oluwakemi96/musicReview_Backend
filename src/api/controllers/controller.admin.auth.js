@@ -1,6 +1,6 @@
-import * as adminAuthServices from '../services/service.admin.auth';
-import mails from '../../lib/utils/sendMails';
-import Response from '../../lib/http/lib.http.response';
+import * as adminAuthServices from '../services/service.admin.auth.js';
+import mails from '../../lib/utils/sendMails.js';
+import Response from '../../lib/http/lib.http.response.js';
 
 /**
  * logs in an admin

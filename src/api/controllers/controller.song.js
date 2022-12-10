@@ -1,7 +1,7 @@
 /* eslint-disable consistent-return */
 // import logger from '../../config/logger';
-import * as songServices from '../services/service.song';
-import Response from '../../lib/http/lib.http.response';
+import * as songServices from '../services/service.song.js';
+import Response from '../../lib/http/lib.http.response.js';
 
 // eslint-disable-next-line consistent-return
 /**

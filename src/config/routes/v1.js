@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import songRoute from '../../api/routes/route.song.js';
 import authRoute from '../../api/routes/route.auth.js';
-import adminAuthRoute from '../../api/routes/route.admin.auth';
+import adminAuthRoute from '../../api/routes/route.admin.auth.js';
 import adminRoute from '../../api/routes/route.admin.js';
 
 const router = Router();
