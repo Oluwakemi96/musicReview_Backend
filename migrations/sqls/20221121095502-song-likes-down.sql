@@ -1,2 +1,2 @@
 /* Replace with your SQL commands */
-DROP TABLE IF EXISTS song-likes;
+DROP TABLE IF EXISTS song_likes;

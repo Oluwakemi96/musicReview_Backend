@@ -1,9 +1,9 @@
 import { Router } from 'express';
-import adminAuth from '../controllers/controller.admin.auth';
-import Model from '../middlewares/middleware.model';
-import Schema from '../../lib/schema/schema.admin.auth';
-import adminMiddleware from '../middlewares/middleware.admin.auth';
-import authMiddleware from '../middlewares/middleware.auth';
+import adminAuth from '../controllers/controller.admin.auth.js';
+import Model from '../middlewares/middleware.model.js';
+import Schema from '../../lib/schema/schema.admin.auth.js';
+import adminMiddleware from '../middlewares/middleware.admin.auth.js';
+import authMiddleware from '../middlewares/middleware.auth.js';
 
 const adminAuthRoute = Router();
 

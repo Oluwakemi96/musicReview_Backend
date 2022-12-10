@@ -1,5 +1,5 @@
 import db from '../../config/db/index.js';
-import songQueries from '../queries/query.song';
+import songQueries from '../queries/query.song.js';
 
 export const fetchSongs = async () => {
   const songs = await db.any(songQueries.getAllSongs);

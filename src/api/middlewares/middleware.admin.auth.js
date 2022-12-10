@@ -1,10 +1,10 @@
 /* eslint-disable consistent-return */
 import jwt from 'jsonwebtoken';
-import tokenExpires from '../../lib/utils/jwt';
-import Response from '../../lib/http/lib.http.response';
-import hash from '../../lib/hash/hash.auth';
-import * as adminAuthServices from '../services/service.admin.auth';
-import config from '../../config/index';
+import tokenExpires from '../../lib/utils/jwt.js';
+import Response from '../../lib/http/lib.http.response.js';
+import hash from '../../lib/hash/hash.auth.js';
+import * as adminAuthServices from '../services/service.admin.auth.js';
+import config from '../../config/index.js';
 
 /**
  * verifies an admin token

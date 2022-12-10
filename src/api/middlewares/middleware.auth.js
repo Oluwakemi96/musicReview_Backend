@@ -1,10 +1,10 @@
 /* eslint-disable consistent-return */
 import jwt from 'jsonwebtoken';
-import tokenExpires from '../../lib/utils/jwt';
-import config from '../../config/index';
-import * as authServices from '../services/service.auth';
-import Response from '../../lib/http/lib.http.response';
-import hash from '../../lib/hash/hash.auth';
+import tokenExpires from '../../lib/utils/jwt.js';
+import config from '../../config/index.js';
+import * as authServices from '../services/service.auth.js';
+import Response from '../../lib/http/lib.http.response.js';
+import hash from '../../lib/hash/hash.auth.js';
 
 // eslint-disable-next-line consistent-return
 /**

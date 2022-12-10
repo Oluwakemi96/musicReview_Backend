@@ -1,8 +1,8 @@
 import { Router } from 'express';
-import authUsers from '../controllers/controller.auth';
-import Model from '../middlewares/middleware.model';
-import Schema from '../../lib/schema/schema.auth';
-import authMiddleware from '../middlewares/middleware.auth';
+import authUsers from '../controllers/controller.auth.js';
+import Model from '../middlewares/middleware.model.js';
+import Schema from '../../lib/schema/schema.auth.js';
+import authMiddleware from '../middlewares/middleware.auth.js';
 
 const authRoute = Router();
 authRoute.post(

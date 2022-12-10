@@ -1,9 +1,9 @@
 import { Router } from 'express';
-import songs from '../controllers/controller.song';
-import Schema from '../../lib/schema/schema.song';
-import Model from '../middlewares/middleware.model';
-import authMiddleware from '../middlewares/middleware.auth';
-import songMiddleware from '../middlewares/middleware.songs';
+import songs from '../controllers/controller.song.js';
+import Schema from '../../lib/schema/schema.song.js';
+import Model from '../middlewares/middleware.model.js';
+import authMiddleware from '../middlewares/middleware.auth.js';
+import songMiddleware from '../middlewares/middleware.songs.js';
 
 const songRoute = Router();
 songRoute.get('/all', songs.allSongs);

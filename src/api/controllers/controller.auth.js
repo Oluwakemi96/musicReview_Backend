@@ -1,7 +1,7 @@
 /* eslint-disable prefer-const */
-import * as authServices from '../services/service.auth';
-import Response from '../../lib/http/lib.http.response';
-import mails from '../../lib/utils/sendMails';
+import * as authServices from '../services/service.auth.js';
+import Response from '../../lib/http/lib.http.response.js';
+import mails from '../../lib/utils/sendMails.js';
 
 /**
  * signs up a user
@@ -21,7 +21,7 @@ const registerUser = async (req, res) => {
   try {
     const user = await authServices.registerUser(full_name.trim().toLowerCase(), username.trim().toLowerCase(), hashedPassword, email_address.trim().toLowerCase(), userToken);
     mails.sendSignUp(email_address, verificationLink);
-    delete user[0].password;
+    delete user.password;
     return Response.success(res, 'user registered successfully', 200, user);
   } catch (error) {
     return error;

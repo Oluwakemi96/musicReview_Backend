@@ -1,10 +1,10 @@
 import { Router } from 'express';
-import Model from '../middlewares/middleware.model';
-import * as Schema from '../../lib/schema/schema.admin';
-import admin from '../controllers/controller.admin';
-import authAdminMiddleware from '../middlewares/middleware.admin.auth';
-import adminMiddleware from '../middlewares/middlewares.admin';
-import authMiddleware from '../middlewares/middleware.auth';
+import Model from '../middlewares/middleware.model.js';
+import * as Schema from '../../lib/schema/schema.admin.js';
+import admin from '../controllers/controller.admin.js';
+import authAdminMiddleware from '../middlewares/middleware.admin.auth.js';
+import adminMiddleware from '../middlewares/middlewares.admin.js';
+import authMiddleware from '../middlewares/middleware.auth.js';
 
 const adminRoute = Router();
 

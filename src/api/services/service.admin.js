@@ -1,5 +1,5 @@
-import adminQueries from '../queries/query.admin';
-import db from '../../config/db';
+import adminQueries from '../queries/query.admin.js';
+import db from '../../config/db/index.js';
 
 export const createRegularAdmin = async (first_name, last_name, email, password_token) => {
   const regularAdmin = await db.oneOrNone(adminQueries.createAdmin, [first_name, last_name, email, password_token]);
