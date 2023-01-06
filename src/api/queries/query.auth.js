@@ -68,7 +68,7 @@ export default {
       SET
         updated_at = NOW(),
         password_token = null,
-        staus = 'active'
+        status = 'active'
       WHERE
           id = $1
             

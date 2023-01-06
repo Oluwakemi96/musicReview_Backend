@@ -54,17 +54,6 @@ const updateAdminPassword = async (req, res) => {
  * @memberof AdminController
  */
 
-const updateAdminStatus = async (req, res) => {
-  try {
-    const { status } = req.body;
-    const { id } = req.params;
-    const updatedAdmin = await adminServices.setAdminStatus(status, id);
-    return Response.success(res, 'status updated successfully', 200, updatedAdmin);
-  } catch (error) {
-    return error;
-  }
-};
-
 /**
  * add songs to the database
  * @param {Request} req -The request from the endpoint
@@ -339,7 +328,6 @@ const getAllSongDetails = async (req, res) => {
 export default {
   createAdmin,
   updateAdminPassword,
-  updateAdminStatus,
   addSongs,
   deleteSongs,
   editSongs,

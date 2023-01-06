@@ -22,7 +22,6 @@ songRoute.get(
   authMiddleware.verifyToken,
   songMiddleware.checkUserCurrentStatus,
   Model(Schema.songId, 'params'),
-  songMiddleware.checkIfSongIdExists,
   songs.getAllSongDetails,
 );
 songRoute.post(
@@ -31,7 +30,6 @@ songRoute.post(
   songMiddleware.checkUserCurrentStatus,
   Model(Schema.songId, 'params'),
   songMiddleware.checkIfUserAlreadyLikedAsong,
-  songMiddleware.checkIfSongIdExists,
   songMiddleware.removeAdislike,
   songs.likeAsong,
 );
@@ -41,7 +39,6 @@ songRoute.post(
   songMiddleware.checkUserCurrentStatus,
   Model(Schema.songId, 'params'),
   songMiddleware.checkIfUserAlreadyDislikedAsong,
-  songMiddleware.checkIfSongIdExists,
   songMiddleware.removeALike,
   songs.dislikeAsong,
 );
@@ -51,7 +48,6 @@ songRoute.post(
   songMiddleware.checkUserCurrentStatus,
   Model(Schema.songIdReview, 'params'),
   Model(Schema.songRating, 'payload'),
-  songMiddleware.checkIfSongIdExists,
   songs.rateAsong,
 );
 
@@ -61,7 +57,6 @@ songRoute.post(
   songMiddleware.checkUserCurrentStatus,
   Model(Schema.songIdReview, 'params'),
   Model(Schema.songReview, 'payload'),
-  songMiddleware.checkIfSongIdExists,
   songs.reviewSong,
 );
 
@@ -71,7 +66,6 @@ songRoute.post(
   songMiddleware.checkUserCurrentStatus,
   Model(Schema.songLikesReview, 'params'),
   songMiddleware.checkIfAuserAlreadyLikedAreview,
-  songMiddleware.checkIfSongIdExists,
   songMiddleware.checkIfReviewIdExists,
   songs.likeReview,
 );
@@ -81,7 +75,6 @@ songRoute.get(
   authMiddleware.verifyToken,
   songMiddleware.checkUserCurrentStatus,
   Model(Schema.songIdReview, 'params'),
-  songMiddleware.checkIfSongIdExists,
   songs.getAsongReview,
 );
 
@@ -90,7 +83,6 @@ songRoute.get(
   authMiddleware.verifyToken,
   songMiddleware.checkUserCurrentStatus,
   Model(Schema.songIdReview, 'params'),
-  songMiddleware.checkIfSongIdExists,
   songs.getUsersThatLikeAsong,
 );
 
@@ -99,7 +91,6 @@ songRoute.get(
   authMiddleware.verifyToken,
   songMiddleware.checkUserCurrentStatus,
   Model(Schema.songIdReview, 'params'),
-  songMiddleware.checkIfSongIdExists,
   songs.getUsersThatDislikeAsong,
 );
 
@@ -108,7 +99,6 @@ songRoute.get(
   authMiddleware.verifyToken,
   songMiddleware.checkUserCurrentStatus,
   Model(Schema.songLikesReview, 'params'),
-  songMiddleware.checkIfSongIdExists,
   songMiddleware.checkIfReviewIdExists,
   songs.getUsersThatLikesAReview,
 );
@@ -119,7 +109,6 @@ songRoute.delete(
   songMiddleware.checkUserCurrentStatus,
   Model(Schema.songLikesReview, 'params'),
   songMiddleware.checkIfAlikeForAreviewExist,
-  songMiddleware.checkIfSongIdExists,
   songMiddleware.checkIfReviewIdExists,
   songs.deleteAuserReview,
 );

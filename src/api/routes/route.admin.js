@@ -27,16 +27,6 @@ adminRoute.post(
 );
 
 adminRoute.post(
-  '/admin_status/:id',
-  authAdminMiddleware.verifyToken,
-  Model(Schema.updateAdminStatus, 'payload'),
-  Model(Schema.updateAdminId, 'params'),
-  adminMiddleware.checkIfAdminIsRegular,
-  admin.updateAdminStatus,
-
-);
-
-adminRoute.post(
   '/add_songs',
   authAdminMiddleware.verifyToken,
   adminMiddleware.checkAdminStatus,

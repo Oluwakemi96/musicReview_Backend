@@ -15,7 +15,7 @@ const adminLogin = async (req, res) => {
   try {
     const admin = await adminAuthServices.getAdminDetailsByEmail(email);
     const data = {
-      admin,
+      ...admin,
       sessionToken: token,
     };
     delete admin.password;

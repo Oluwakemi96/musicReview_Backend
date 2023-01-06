@@ -21,15 +21,20 @@ const verifyToken = async (req, res, next) => {
     if (tokenExists) {
       const token = req.headers.authorization.split(' ')[1];
       jwt.verify(token, config.MUSIC_REVIEW_JWT_SECRET_KEY, tokenExpires.MUSIC_REVIEW_JWT_SIGN_OPTIONS, async (err, decodedToken) => {
-        if (decodedToken.message === 'jwt expired') {
-          console.log(err);
-          return Response.error(res, 'token expired', 401);
+        // if (decodedToken.message === 'jwt expired') {
+        //   console.log(err);
+        //   return Response.error(res, 'token expired', 401);
+        // }
+        if (err) {
+          return Response.error(res, 'unauthorized access', 401);
         }
-
         if (!decodedToken.is_admin) {
           return Response.error(res, 'Access denied, contact support', 403);
         }
         const admin = await adminAuthServices.getAdminDetailsById(decodedToken.admin_id);
+        if (admin.status === 'inactive' || admin.status === 'deactivated' || admin.status === 'suspended') {
+          return Response.error(res, 'Access denied, contact support', 403);
+        }
         delete admin.password;
         req.admin = admin;
         return next();
@@ -55,6 +60,7 @@ const checkIfAdminEmailExists = async (req, res, next) => {
   let { email } = req.body;
   try {
     const email_address = await adminAuthServices.getAdminEmail(email);
+    console.log('I AM HERE', email_address);
     if (!email_address) {
       return Response.error(res, 'the email you entered is invalid, please enter a valid mail', 404);
     }

@@ -18,7 +18,7 @@ authRoute.post(
   '/user_verification',
   Model(Schema.userStatus, 'payload'),
   authMiddleware.compareUserVerificationToken,
-  authUsers.updateUserStatus,
+  authUsers.verifyUserEmail,
 );
 authRoute.post(
   '/login',
@@ -31,9 +31,9 @@ authRoute.post(
 );
 authRoute.post(
   '/forgot_password',
+  Model(Schema.forgotPassword, 'payload'),
   authMiddleware.checkIfEmailExistsForLogin,
   authMiddleware.generateToken,
-  Model(Schema.forgotPassword, 'payload'),
   authUsers.forgotPassword,
 );
 authRoute.post(

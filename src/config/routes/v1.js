@@ -8,7 +8,7 @@ const router = Router();
 
 router.use('/song', songRoute);
 router.use('/auth', authRoute);
-router.use('/adminAuth', adminAuthRoute);
+router.use('/admin/Auth', adminAuthRoute);
 router.use('/admin', adminRoute);
 
 export default router;
