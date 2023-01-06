@@ -3,27 +3,6 @@ import * as authServices from '../services/service.auth.js';
 import Response from '../../lib/http/lib.http.response.js';
 
 /**
- * checks if a song's id exists
- * @param {Request} req -The request from the endpoint
- * @param {Response} res -The response returned by the method/function
- * @param {Next} next -Calls the next operation
- * @returns {Object} -Returns an object (error or response)
- * @memberof SongsMiddleware
- */
-const checkIfSongIdExists = async (req, res, next) => {
-  try {
-    let { song_id } = req.params;
-    let existingId = await songServices.getAllSongIds(song_id);
-    if (!existingId) {
-      return Response.error(res, 'the song you are searching for is not available', 404);
-    }
-    return next();
-  } catch (error) {
-    return error;
-  }
-};
-
-/**
  * checks if a user already likes a song
  * @param {Request} req -The request from the endpoint
  * @param {Response} res -The response returned by the method/function
@@ -230,7 +209,6 @@ const checkIfReviewIdExists = async (req, res, next) => {
 };
 
 export default {
-  checkIfSongIdExists,
   checkIfUserAlreadyLikedAsong,
   checkIfUserAlreadyDislikedAsong,
   removeALike,

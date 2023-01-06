@@ -199,7 +199,7 @@ const getAsongReview = async (req, res) => {
   let { song_id } = req.params;
   try {
     const review = await songServices.getAsongReviews(song_id);
-    return Response.success(res, 'songs fetched successfully', 200, review);
+    return Response.success(res, 'song review fetched successfully', 200, review);
   } catch (error) {
     console.log(error);
     return error;
